@@ -10,6 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Excluir archivos duplicados de la subcarpeta de documentos/respaldo -->
+    <Compile Remove="Documentos\**\*" />
+    <EmbeddedResource Remove="Documentos\**\*" />
+    <None Remove="Documentos\**\*" />
+    <Content Remove="Documentos\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

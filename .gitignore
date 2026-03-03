@@ -1,0 +1,32 @@
+## [ Estructura para C# y .NET ] ##
+
+# Archivos de salida (Binarios)
+[Bb]in/
+[Oo]bj/
+[Aa]rm/
+[Aa]rm64/
+[Xx]64/
+[Xx]86/
+
+# Archivos de usuario y configuración personal
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+
+# Archivos temporales de compilación
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.patch
+*.diff
+
+# Bases de datos locales
+*.db
+*.sqlite
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

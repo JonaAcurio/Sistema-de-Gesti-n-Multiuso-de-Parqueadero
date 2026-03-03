@@ -1,0 +1,16 @@
+[
+  {
+    "Numero": "3846766",
+    "NombreUsuario": "Jeremy",
+    "Observaciones": "Prueba1",
+    "FechaRegistro": "2026-02-27T10:23:53.9125423-05:00",
+    "Habilitada": true
+  },
+  {
+    "Numero": "3846769",
+    "NombreUsuario": "Prueba2",
+    "Observaciones": "prueba2",
+    "FechaRegistro": "2026-02-27T11:49:09.2862859-05:00",
+    "Habilitada": true
+  }
+]

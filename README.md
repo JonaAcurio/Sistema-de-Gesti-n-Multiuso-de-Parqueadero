@@ -60,7 +60,10 @@ El proyecto se organiza en los siguientes módulos principales:
 ## 👥 Autores
 * **Jonathan Acurio**
 * **Carlos Parreño**
-
+* **Carlos Ortega**
+* **Alberto Falconí**
+* **Jeremy Jácome**
+* **Sebastián Sanmartín**
 ---
 
 ## ⚖️ Licencia

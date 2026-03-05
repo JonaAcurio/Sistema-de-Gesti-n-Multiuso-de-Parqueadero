@@ -596,24 +596,6 @@ InterfazParqueadero.exe
    - Emisión automática de facturas electrónicas
    - Pasarela de pagos en línea
 
-### Largo Plazo (1-2 años)
-
-7. **Inteligencia Artificial**
-   - Predicción de ocupación por día/hora
-   - Detección de anomalías en patrones de acceso
-   - Optimización automática de asignación de espacios
-
-8. **IoT y Sensores Avanzados**
-   - Sensores de ocupación en cada plaza
-   - Cámaras con reconocimiento de placas (ALPR)
-   - Integración con sistemas de iluminación inteligente
-
-9. **Aplicación Móvil**
-   - App nativa (Android/iOS) para usuarios finales
-   - Reserva de espacios anticipada
-   - Notificaciones push de sanciones o vencimientos
-   - Pagos móviles integrados
-
 ---
 
 ## 👥 Autores y Contribuidores
@@ -622,18 +604,18 @@ InterfazParqueadero.exe
 
 | Nombre | Rol | GitHub |
 |:-------|:----|:-------|
-| **Jonathan Acurio** | Líder de Proyecto / Desarrollador | [@JonaAcurio](https://github.com/JonaAcurio) |
-| **Carlos Parreño** | Desarrollador Backend / Base de Datos | - |
-| **Carlos Ortega** | Desarrollador Frontend / UI | - |
-| **Alberto Falconí** | Arquitecto de Software | - |
-| **Jeremy Jácome** | Integración Hardware / Testing | - |
-| **Sebastián Sanmartín** | Analista de Requerimientos | - |
+| **Dennys Coronel** | Director | - |
+| **Jonathan Acurio** | Project Management | [@JonaAcurio](https://github.com/JonaAcurio) |
+| **Carlos Parreño** | Project Management | - |
+| **Carlos Ortega** | Developer | - |
+| **Alberto Falconí** | Developer | - |
+| **Jeremy Jácome** | Developer | - |
+| **Sebastián Sanmartín** | Developer | - |
 
 ### Institución
 
 **Pontificia Universidad Católica del Ecuador Sede Ambato (PUCESA)**  
-Facultad de Ingeniería de Sistemas  
-Proyecto de Titulación / Vinculación con la Comunidad
+Facultad de Hábitat, Infraestructura y Creatividad
 
 ---
 
@@ -643,14 +625,14 @@ Este proyecto es de **carácter estrictamente académico** para la comunidad uni
 
 **Restricciones:**
 - No se permite el uso comercial sin autorización expresa
-- El código fuente es propiedad intelectual de los autores y PUCESA
+- El código fuente es propiedad intelectual de la PUCESA
 - Cualquier derivación o fork debe citar apropiadamente la fuente
 
 **Uso Educativo:**
 Se permite el uso del código con fines educativos y de investigación, siempre que se cite adecuadamente:
 
 ```
-Acurio, J., Parreño, C., Ortega, C., Falconí, A., Jácome, J., & Sanmartín, S. (2026).
+Acurio, J., Coronel, D., Falconí, Jácome, J., A., Ortega, C., Parreño, C., & Sanmartín, S. (2026).
 Sistema de Gestión Multiuso de Parqueadero PUCESA.
 Pontificia Universidad Católica del Ecuador Sede Ambato.
 ```

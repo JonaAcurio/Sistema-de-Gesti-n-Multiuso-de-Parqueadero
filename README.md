@@ -520,6 +520,66 @@ InterfazParqueadero.exe
 
 ---
 
+## Dependencias entre Módulos
+
+El siguiente diagrama muestra la relación y dependencias entre los módulos del sistema de gestión de parqueaderos.
+
+```mermaid
+graph TD
+
+A[1. Autenticación]
+
+B[2. Configuración]
+C[3. Usuarios y Roles]
+D[4. Vehículos]
+E[5. Tarjetas RFID]
+F[6. Barrera]
+G[7. Accesos]
+H[8. Tarifas / Pagos]
+I[9. Sanciones]
+J[10. Reportes]
+K[11. Incidencias]
+L[12. Visitantes]
+
+A --> B
+A --> C
+A --> D
+A --> E
+A --> F
+A --> G
+A --> H
+A --> I
+A --> J
+A --> K
+A --> L
+
+B --> F
+
+C --> D
+C --> G
+C --> I
+
+D --> E
+D --> G
+
+E --> F
+E --> G
+
+F --> G
+F --> H
+
+G --> H
+G --> J
+
+H --> J
+
+I --> F
+
+H --> L
+F --> L
+
+---
+
 ## 📊 Estado de Desarrollo
 
 ### Versión Actual: 2.0 (Funcional)

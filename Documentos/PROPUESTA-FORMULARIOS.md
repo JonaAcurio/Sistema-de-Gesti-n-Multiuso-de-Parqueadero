@@ -309,3 +309,87 @@ Gestionar acceso temporal de vehículos no registrados (visitantes).
 - Visitantes (Módulo 12 - básico)
 
 **Total Fase 3:** ~25+ formularios
+
+### FASE 4 - Optimización y Polish (Meses 7+)
+**Refinamiento, reportes avanzados, integración**
+
+- Reportes avanzados y exportación (10.2-10.7)
+- SSO Microsoft (1.2)
+- Recuperar contraseña (1.4)
+- Gestión de roles avanzada (1.5-1.6)
+
+**Total Fase 4+:** 32+ formularios completos
+
+---
+
+## 🔗 MATRIZ DE DEPENDENCIAS
+
+## 1. Autenticación
+- Todos los módulos dependen de este.
+
+---
+
+## 2. Configuración
+- Hardware debe estar configurado antes de usar **Barrera (6)**.
+- Los **Períodos** requieren configuración previa.
+
+---
+
+## 3. Usuarios y Roles
+- Requerido antes de asignar **Vehículos (4)**.
+- Requerido antes de crear **Accesos (7)**.
+- Requerido antes de aplicar **Sanciones (9)**.
+
+---
+
+## 4. Vehículos
+- Requerido antes de asignar **TAGs / Tarjetas RFID (5)**.
+- Requerido antes de registrar **Accesos (7)**.
+
+---
+
+## 5. Tarjetas RFID
+- Requerido para que funcione la **Barrera (6)**.
+- Requerido para registrar **Accesos (7)**.
+
+---
+
+## 6. Barrera
+- Genera datos para **Accesos (7)**.
+- Genera datos para **Tickets / Tarifas (8)**.
+
+---
+
+## 7. Accesos
+- Requerido para **Tarifas / Pagos (8)**.
+- Requerido para **Reportes (10)**.
+
+---
+
+## 8. Tarifas / Pagos
+- Requerido para **facturación**.
+- Insumo para **Reportes financieros (10)**.
+
+---
+
+## 9. Sanciones
+- Depende de **Usuarios (3)**.
+- Afecta permisos en **Barrera (6)**.
+
+---
+
+## 10. Reportes
+- Consumen datos de **todos los módulos**.
+
+---
+
+## 11. Incidencias
+- Independiente, puede implementarse en paralelo.
+
+---
+
+## 12. Visitantes
+- Depende de **Tarifas (8)** para cálculo.
+- Depende indirectamente de **Barrera (6)**.
+
+---

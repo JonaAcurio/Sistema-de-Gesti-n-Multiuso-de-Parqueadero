@@ -10,14 +10,8 @@ Revisión: 1.0
 | :--- | :--- | :--- | :--- |
 | 23/02/2026 | 1.0 | Carlos Parreño<br>Jonathan Acurio | |
 
-Documento validado por las partes en fecha: 23/02/2026
+Documento validado por las partes en fecha: 09/03/2026
 
-| Por el cliente | Por la Empresa suministradora |
-| :--- | :--- |
-| | |
-| Fdo. D./Dña | Fdo. D./Dña |
-
----
 
 ## Contenido
 
@@ -58,7 +52,6 @@ El sistema a desarrollar contempla:
 | Sebastian Falconi | Estudiante | | 098 194 7131 |
 | David Ojeda | Estudiante | | 098 250 0589 |
 | Carlos Parreño | Estudiante | Levantamiento de requerimientos | 099 972 0694 |
-| Nancy Chango | Estudiante | Levantamiento de requerimientos | 098 449 3463 |
 
 ### 1.3 Definiciones, acrónimos y abreviaturas
 

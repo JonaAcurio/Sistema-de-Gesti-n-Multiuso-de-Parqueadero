@@ -132,20 +132,28 @@ El sistema controla una **barrera vehicular automatizada** mediante lectores RFI
 ├── 📄 tarjetas_autorizadas.json        # Almacenamiento local de TAGs (temporal)
 │
 ├── 📂 Documentos/
-│   ├── 📄 COMANDOS-GIT.md              # Guía de comandos Git
-│   ├── 📄 CONVENCIONES.md              # Estándares de commits y ramas
-│   ├── 📄 INSTALACION-GIT.md           # Instrucciones de configuración Git
-│   ├── 📄 SOLICITUDES.md               # Gestión de requerimientos
-│   ├── 📄 Task_List.md                 # Lista de tareas y progreso
-│   │
-│   ├── 📂 database/
-│   │   ├── 📄 dbo.sql                  # Script DDL de base de datos completa
-│   │   ├── 📄 dbo.bak                  # Backup de base de datos
-│   │   └── 📄 datos_prueba.sql         # Datos de prueba
-│   │
-│   └── 📂 parqueadero-docs/
-│       ├── 📄 Acta Semanal_Semana_1.md
-│       └── 📄 plantilla_formato_ieee830-parqueadero.md
+│   ├── 📂 01_Gestion_Proyecto/
+│   │   ├── 📄 Task_List.md
+│   │   └── 📂 Actas/
+│   │       └── 📄 Acta_Semanal_01.md
+│   ├── 📂 02_Requisitos_y_Analisis/
+│   │   ├── 📂 Arquitectura/
+│   │   │   └── 📄 Informe_Arquitectura_Sistema.pdf
+│   │   ├── 📂 Plantillas/
+│   │   │   └── 📄 Plantilla_IEEE830_Parqueadero.md
+│   │   └── 📂 UX_UI/
+│   │       └── 📄 Propuesta_Formularios.md
+│   ├── 📂 03_Base_de_Datos/
+│   │   └── 📂 Esquema/
+│   │       └── 📄 dbo.sql
+│   ├── 📂 04_Desarrollo/
+│   │   ├── 📂 Estandares/
+│   │   │   └── 📄 Convenciones.md
+│   │   └── 📂 Guia_Git/
+│   │       ├── 📄 Comandos_Git.md
+│   │       └── 📄 Instalacion_Git.md
+│   ├── 📂 05_Operacion/
+│   └── 📂 99_Historico/
 │
 ├── 📂 Properties/
 │   ├── 📄 Resources.Designer.cs
@@ -155,6 +163,9 @@ El sistema controla una **barrera vehicular automatizada** mediante lectores RFI
 │
 └── 📂 obj/                              # Archivos de compilación (auto-generado)
 ```
+
+**Documento de arquitectura (actual):**
+`Documentos/02_Requisitos_y_Analisis/Arquitectura/Informe_Arquitectura_Sistema.pdf`
 
 ### Componentes Clave
 
@@ -438,7 +449,7 @@ La base de datos `dbo` contiene las siguientes tablas principales:
 #    Authentication: Windows Authentication
 
 # 3. Ejecutar el script DDL:
-cd Documentos/database
+cd Documentos/03_Base_de_Datos/Esquema
 # Abrir dbo.sql y ejecutar en SSMS
 ```
 
@@ -722,7 +733,7 @@ Las contribuciones son bienvenidas siguiendo las convenciones del proyecto:
 3. Commit con mensajes descriptivos: `feat: agregar validación de placas`
 4. Pull Request con descripción completa de cambios
 
-**Ver:** [Documentos/CONVENCIONES.md](Documentos/CONVENCIONES.md) para estándares de código
+**Ver:** [Documentos/04_Desarrollo/Estandares/Convenciones.md](Documentos/04_Desarrollo/Estandares/Convenciones.md) para estándares de código
 
 ---
 
@@ -737,8 +748,12 @@ Las contribuciones son bienvenidas siguiendo las convenciones del proyecto:
 
 ## 📚 Documentación Adicional
 
-- [Task_List.md](Documentos/Task_List.md) - Lista de tareas y requisitos funcionales
-- [COMANDOS-GIT.md](Documentos/COMANDOS-GIT.md) - Guía básica de Git
+- [Documentos/README.md](Documentos/README.md) - Índice central de la documentación del proyecto
+- [Task_List.md](Documentos/01_Gestion_Proyecto/Task_List.md) - Lista de tareas y requisitos funcionales
+- [Informe_Arquitectura_Sistema.pdf](Documentos/02_Requisitos_y_Analisis/Arquitectura/Informe_Arquitectura_Sistema.pdf) - Arquitectura del sistema
+- [Convenciones.md](Documentos/04_Desarrollo/Estandares/Convenciones.md) - Estándares de commits y ramas
+- [Comandos_Git.md](Documentos/04_Desarrollo/Guia_Git/Comandos_Git.md) - Guía básica de Git
+- [Instalacion_Git.md](Documentos/04_Desarrollo/Guia_Git/Instalacion_Git.md) - Instalación y configuración de Git
 - [Resumen_para_la_IA.md](Resumen_para_la_IA.md) - Especificaciones técnicas detalladas
 - [README_V2.md](README_V2.md) - Notas de la versión 2.0 funcional
 

@@ -1,0 +1,37 @@
+# Registro de Stakeholders
+
+**Código documental:** CP-STK-001  
+**Versión:** 1.0  
+**Estado:** Borrador de estabilización documental  
+**Fecha:** 2026-07-17  
+**Autor:** Codex sobre insumos existentes del proyecto  
+**Revisores:** Equipo del proyecto; Pendiente de validación por PUCESA  
+**Aprobador:** Responsable institucional por designar
+
+## Historial de cambios
+
+| Versión | Fecha | Descripción |
+| --- | --- | --- |
+| 1.0 | 2026-07-17 | Registro inicial de stakeholders institucionales por área. |
+
+## 1. Tabla general
+
+| ID | Stakeholder | Tipo | Área | Relación con el sistema | Necesidades | Nivel de influencia | Nivel de interés | Participación esperada | Decisiones que debe aprobar | Información que debe proporcionar | Responsable nominal | Estado de identificación | Observaciones |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| STK-01 | PUCESA | Interno | Institucional | Patrocinador, propietario funcional y beneficiario | Alineación institucional, seguridad, continuidad | Alto | Alto | Patrocinio y validación | Aprobación institucional general | Prioridades y lineamientos institucionales | Responsable institucional por designar | Identificado | Beneficiario principal del sistema. |
+| STK-02 | Autoridades de PUCESA | Interno | Gobierno institucional | Definen políticas, presupuesto y validaciones | Resultados, control, servicio, seguridad | Alto | Alto | Aprobación y direccionamiento | Reglamento, excepciones, prioridades, presupuesto | Políticas, restricciones, lineamientos | Responsable institucional por designar | Identificado | Sin nombres nominales confirmados. |
+| STK-03 | Equipo de Investigación Smart Campus | Interno | Investigación | Impulsa innovación y validación conceptual | Evidencia, coordinación y evolución | Medio | Alto | Revisión y acompañamiento | Enfoque de investigación y alineación temática | Objetivos de investigación y alcance | Responsable institucional por designar | Identificado | Relacionado con el contexto Smart Campus. |
+| STK-04 | Carrera o área de Ingeniería en Sistemas de Información | Interno | Académica/técnica | Análisis, diseño, desarrollo y documentación | Claridad de alcance, trazabilidad, estabilidad | Medio | Alto | Ejecución técnica y documental | Entregables técnicos internos | Estado del prototipo y documentación | Responsable institucional por designar | Identificado | Equipo técnico inicial del proyecto. |
+| STK-05 | Dirección o Unidad de Tecnologías de la Información | Interno | TI | Infraestructura, seguridad y despliegue | Red, servidores, identidad, respaldo | Alto | Alto | Validación técnica y soporte | Infraestructura, SSO, seguridad, operación | Red, autenticación, infraestructura y respaldo | Responsable institucional por designar | Identificado | Clave para SSO, producción y continuidad. |
+| STK-06 | Dirección Administrativa o unidad de infraestructura y parqueaderos | Interno | Administración | Responsable funcional de operación del parqueadero | Cupos, horarios, señalética, mantenimiento | Alto | Alto | Aprobación operativa | Reglas operativas, cupos, espacios reservados | Distribución física, reglamentos y horarios | Responsable institucional por designar | Identificado | Debe validar operación de parqueaderos. |
+| STK-07 | Unidad Financiera | Interno | Financiero | Define y opera reglas económicas | Tarifas, comprobantes, pagos, conciliación | Alto | Alto | Definición y validación financiera | Tarifas, reposición de TAG, facturación | Proceso contable y flujo de pago | Responsable institucional por designar | Identificado | No se asume integración automática aprobada. |
+| STK-08 | Seguridad institucional | Interno | Seguridad | Control físico, incidentes y contingencias | Excepciones, vigilancia, continuidad | Alto | Alto | Operación y validación de campo | Reglas operativas de seguridad y contingencias | Casos de uso de campo e incidencias | Responsable institucional por designar | Identificado | Relación directa con accesos y excepciones. |
+| STK-09 | Operadores de garita | Interno | Operación | Ejecutan la operación diaria | Interfaz rápida, apertura manual, continuidad | Medio | Alto | Pruebas y operación diaria | Procedimientos operativos de garita | Flujos reales, incidencias y necesidades de interfaz | Responsable institucional por designar | Identificado | Actor clave del MVP. |
+| STK-10 | Administradores funcionales de Cato Parking | Interno | Operación/administración | Configuran reglas y mantienen datos | Configuración, cupos, TAG, reportes | Medio | Alto | Administración funcional | Parámetros funcionales, periodos y permisos | Reglas operativas del sistema | Responsable institucional por designar | Identificado | No equivale automáticamente a un cargo confirmado. |
+| STK-11 | Soporte técnico | Interno | Soporte | Diagnóstico, mantenimiento y continuidad | Logs, hardware, software, monitoreo | Medio | Alto | Soporte y mantenimiento | Procedimientos de mantenimiento y escalamiento | Diagnósticos, incidencias y controles técnicos | Responsable institucional por designar | Identificado | Relacionado con hardware y aplicación local. |
+| STK-12 | Estudiantes | Interno | Usuario final | Usuaria o usuario institucional potencial del servicio | Registro, estado, acceso, TAG | Bajo | Alto | Validación de experiencia y uso | Ninguna aprobación institucional formal | Necesidades de uso y restricciones prácticas | Responsable institucional por designar | Identificado | Usuario final reconocido. |
+| STK-13 | Docentes | Interno | Usuario final | Usuario institucional potencial del servicio | Acceso, prioridades, horarios, vehículo | Bajo | Alto | Validación de experiencia y uso | Ninguna aprobación institucional formal | Necesidades de uso y restricciones prácticas | Responsable institucional por designar | Identificado | Usuario final reconocido. |
+| STK-14 | Personal administrativo | Interno | Usuario final | Usuario institucional potencial del servicio | Acceso, horarios, vehículo, prioridad | Bajo | Alto | Validación de experiencia y uso | Ninguna aprobación institucional formal | Necesidades de uso y restricciones prácticas | Responsable institucional por designar | Identificado | Usuario final reconocido. |
+| STK-15 | Visitantes | Externo | Usuario final | Usuario temporal de acceso | Orientación, autorización y salida | Bajo | Medio | Validación de proceso futuro | Ninguna aprobación institucional formal | Casos de visita y necesidades básicas | Responsable institucional por designar | Identificado | Las reglas de visitantes siguen pendientes. |
+| STK-16 | Personas con discapacidad, mujeres embarazadas y otros grupos prioritarios | Interno/externo | Usuario final | Grupo con requerimientos de atención especial | Accesibilidad, prioridad, seguridad | Medio | Alto | Validación de reglas de trato prioritario | Excepciones y espacios reservados | Necesidades de accesibilidad y atención | Responsable institucional por designar | Identificado | Reglas específicas pendientes de aprobación. |
+| STK-17 | Proveedor o responsable técnico del hardware ZKTeco | Externo | Proveedor/soporte | Valida compatibilidad, garantía y soporte | Configuración, firmware, SDK | Medio | Alto | Validación técnica especializada | Confirmación de compatibilidad y topología | Manuales, compatibilidad y soporte | Responsable institucional por designar | Identificado | Crítico para validar InBIO 260 y SDK. |

@@ -1,772 +1,188 @@
-# 🚗 Sistema de Gestión Multiuso de Parqueadero PUCESA
+# Cato Parking
 
-Sistema centralizado para la administración inteligente de espacios de estacionamiento, diseñado para optimizar el control de acceso vehicular mediante hardware especializado y gestión automatizada, implementado para la Pontificia Universidad Católica del Ecuador Sede Ambato (PUCESA).
+**Subtítulo:** Sistema Institucional de Gestión de Parqueaderos de PUCESA  
+**Código documental:** CP-README-001  
+**Versión:** 2.0  
+**Estado:** Borrador de estabilización documental  
+**Fecha:** 2026-07-17  
+**Autor:** Codex sobre documentación existente del proyecto  
+**Revisores:** Equipo del proyecto; Pendiente de validación por PUCESA  
+**Aprobador:** Responsable institucional por designar
 
----
+## Historial de cambios
 
-## 📋 Descripción del Proyecto
+| Versión | Fecha | Descripción |
+| --- | --- | --- |
+| 2.0 | 2026-07-17 | Reestructura el README como fuente de contexto estable; separa prototipo, MVP y sistema completo; consolida nombre oficial e inconsistencias documentales. |
+| 1.x | 2026-03 a 2026-04 | Versiones previas del proyecto con mezcla de alcance implementado y visión futura. |
 
-Este sistema permite gestionar de forma integral y automática el ciclo completo de operación de un parqueadero universitario, integrando hardware de control de acceso con software de gestión en tiempo real.
+## 1. Identidad oficial
 
-El sistema controla una **barrera vehicular automatizada** mediante lectores RFID que validan el acceso de vehículos registrados, proporcionando un registro detallado de entradas y salidas, y facilitando la administración de usuarios, vehículos y tarifas.
+- **Nombre público aprobado:** Cato Parking.
+- **Nombre técnico aprobado:** Sistema Institucional de Gestión de Parqueaderos Cato Parking.
+- **Institución beneficiaria:** Pontificia Universidad Católica del Ecuador, Sede Ambato (PUCESA).
+- **Contexto institucional aprobado:** iniciativa Smart Campus orientada a la gestión de parqueaderos.
 
-### Características Principales
+Las denominaciones `Sistema de Gestión Multiuso de Parqueadero`, `Sistema de Gestión Multisitio de Parqueaderos`, `Sistema Multi-Parqueadero` y `SGP PUCESA` deben tratarse como denominaciones históricas en documentos anteriores.
 
-* **Control de Acceso Automatizado:** Validación física mediante lectores RFID (TAG) que activan automáticamente la barrera vehicular
-* **Monitoreo en Tiempo Real:** Visualización de eventos de acceso, estado de lectores y movimientos del parqueadero
-* **Gestión de Tarjetas RFID:** Sistema completo de registro, activación, desactivación y auditoría de credenciales
-* **Registro de Movimientos:** Historial completo de todas las entradas y salidas con timestamps precisos
-* **Base de Datos Centralizada:** Almacenamiento estructurado de usuarios, vehículos, accesos, pagos y sanciones
-* **Interfaz Gráfica Intuitiva:** Aplicación de escritorio con Windows Forms para operación y configuración
+## 2. Estado actual del repositorio
 
----
+Este repositorio contiene dos niveles de realidad técnica que deben leerse por separado:
 
-## 🎯 Objetivos del Sistema
+1. **Prototipo actual de garita**
+   - Aplicación local de escritorio en Windows Forms.
+   - Persistencia local basada en `tarjetas_autorizadas.json`.
+   - Comunicación por TCP/IP con controladora ZKTeco mediante `plcommpro.dll`.
+   - Lectura de TAG RFID, autorización local, apertura automática y registro visual de eventos.
+   - Apertura manual y control básico operativo.
 
-1. **Automatizar el control de acceso vehicular** en los parqueaderos de PUCESA
-2. **Eliminar procesos manuales** de apertura y cierre de barreras
-3. **Registrar y auditar** todos los movimientos vehiculares con precisión temporal
-4. **Gestionar perfiles diferenciados** (Estudiantes, Docentes, Administrativos, Visitantes)
-5. **Integrar hardware especializado** (ZKTeco InBIO 206) con software de gestión
-6. **Facilitar la facturación y control de pagos** según tarifas configurables
-7. **Aplicar sanciones automáticas** por incumplimiento de normas
-8. **Proporcionar reportes administrativos** para toma de decisiones
+2. **Documentación del sistema objetivo**
+   - Requisitos, propuesta funcional, esquema SQL y visión institucional más amplia.
+   - Parte de esta documentación describe capacidades previstas y no debe interpretarse como funcionalidades implementadas.
 
----
+## 3. Prototipo actual
 
-## ✅ Funcionalidades Actuales
+### 3.1 Funcionalidad implementada observada
 
-### ✔️ Implementado y Funcional
+Con base en el código fuente actual y el material técnico disponible, el prototipo implementa o evidencia:
 
-* **Conexión con Panel de Control ZKTeco InBIO 206**
-  - Comunicación TCP/IP estable con el controlador de acceso
-  - Soporte para 2 puertas (entrada y salida)
-  - Heartbeat y reconexión automática
-  
-* **Lectura de Tarjetas RFID en Tiempo Real**
-  - Detección automática de TAGs al pasar por los lectores
-  - Parsing de eventos del SDK (E0, E20, E27)
-  - Identificación de lector (Reader 1 entrada, Reader 4 salida)
+- aplicación local de garita para Windows;
+- conexión de red con controladora ZKTeco;
+- lectura de TAG RFID en tiempo real;
+- autorización local con almacenamiento JSON;
+- apertura automática cuando el TAG es válido;
+- denegación básica cuando el TAG no está registrado o está deshabilitado;
+- apertura manual desde la interfaz local;
+- anti-rebote básico de lecturas;
+- visualización de eventos y mensajes técnicos en tiempo real.
 
-* **Autorización de Acceso**
-  - Validación contra base de datos local (JSON)
-  - Apertura automática de barrera para TAGs autorizados
-  - Bloqueo de acceso para TAGs no registrados o deshabilitados
+### 3.2 Limitaciones actuales del prototipo
 
-* **Control de Barrera Vehicular**
-  - Comando de subir brazo (LOCK 1)
-  - Manejo de conflictos LOCK 1/LOCK 2
-  - Cancelación automática de señales en conflicto
-  - Temporización configurable de pulsos
+- la persistencia central en SQL Server no está operativa en la aplicación local actual;
+- no existe evidencia de integración productiva con Microsoft SSO;
+- no existe evidencia de operación productiva del módulo financiero;
+- no existe evidencia de portal web funcional integrado con la garita;
+- no existe evidencia documental suficiente para declarar operativo el catálogo completo de sanciones, periodos o reportes avanzados.
 
-* **Gestión de Tarjetas**
-  - Alta de nuevas tarjetas con datos de usuario
-  - Modificación de información de tarjetas
-  - Habilitación / Deshabilitación de tarjetas
-  - Eliminación de tarjetas del sistema
-  - Modo de detección para registrar TAGs nuevas
+## 4. Definición formal del MVP
 
-* **Registro de Eventos**
-  - Tabla visual de todos los accesos (entrada/salida)
-  - Timestamp de cada evento
-  - Identificación de usuario y número de tarjeta
-  - Estado de autorización (aprobado/denegado)
+El MVP de Cato Parking valida el control de acceso vehicular y el núcleo mínimo de gestión institucional, sin representar aún el sistema completo.
 
-* **Protección Anti-Rebote**
-  - Filtrado de lecturas duplicadas (ventana de 5 segundos)
-  - Prevención de activaciones múltiples del relay
+### 4.1 Alcance incluido en el MVP
 
-* **Interfaz de Usuario**
-  - Pestaña de Configuración de Hardware
-  - Pestaña de Control de Acceso (visualización de eventos)
-  - Pestaña de Gestión de Tarjetas
-  - Estadísticas en tiempo real (total, habilitadas, deshabilitadas)
-  - Logs de sistema con codificación por colores
+- aplicación local de garita operativa en Windows;
+- conexión estable con controlador ZKTeco InBIO 260 por TCP/IP con librerías oficiales o compatibles;
+- lectura de TAG RFID en tiempo real;
+- identificación de punto de lectura como entrada o salida cuando la instalación física lo permita;
+- registro básico de TAG, usuario asociado, vehículo asociado y estado;
+- activación y desactivación manual de TAG;
+- validación básica de autorización;
+- apertura automática de barrera;
+- denegación por TAG inexistente o deshabilitado;
+- apertura manual con motivo obligatorio;
+- registro de cada intento de acceso;
+- protección contra lecturas repetidas;
+- registro básico de eventos técnicos;
+- persistencia local funcional para pruebas;
+- interfaz mínima de configuración, monitoreo, gestión básica y eventos;
+- pruebas físicas documentadas de entrada, salida, autorizaciones, denegaciones y contingencias.
 
-### 🚧 En Desarrollo / Planificado
+### 4.2 Fuera del MVP
 
-* **Integración con SQL Server**
-  - Migración de almacenamiento JSON a base de datos relacional
-  - Entity Framework Core para operaciones CRUD
-  - Stored procedures para lógica de negocio
+- Microsoft SSO;
+- pagos institucionales;
+- facturación;
+- tarifas variables;
+- visitantes con cobro completo;
+- sanciones automáticas;
+- portal de autoservicio;
+- reportes administrativos avanzados;
+- aplicación móvil;
+- reservas;
+- notificaciones institucionales;
+- analítica avanzada;
+- sincronización productiva completa entre web y garita.
 
-* **Sistema de Tarifas**
-  - Cálculo automático de cobros por hora/fracción
-  - Tarifas diferenciadas por tipo de usuario
-  - Descuentos por discapacidad o espacios mixtos
+## 5. Visión del sistema completo
 
-* **Gestión de Visitantes**
-  - Registro temporal de vehículos no registrados
-  - Tickets con código de barras/QR para salida
+La visión objetivo de Cato Parking contempla, de forma modular y no implementada todavía:
 
-* **Sistema de Sanciones**
-  - Bloqueo automático por incumplimiento de horarios
-  - Gestión de multas y pagos pendientes
-  - Notificaciones por correo electrónico
+- identidad y autenticación institucional;
+- usuarios, perfiles y roles;
+- administración de múltiples parqueaderos;
+- periodos y prioridades por roles o grupos;
+- vehículos e inscripciones;
+- inventario y ciclo de vida de TAG;
+- módulo financiero;
+- control de acceso integral;
+- visitantes;
+- sanciones e incidencias;
+- reportes y auditoría;
+- configuración;
+- integración y sincronización;
+- operación y soporte.
 
-* **Reportes Administrativos**
-  - Ocupación en tiempo real y histórica
-  - Exportación a PDF/Excel
-  - Dashboard con indicadores clave
+La descripción detallada de esta visión se mantiene en [Vision_Sistema_Completo.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Vision_Sistema_Completo.md).
 
-* **Autenticación Institucional**
-  - Login con credenciales Microsoft (SSO)
-  - Roles y permisos diferenciados
+## 6. Hardware y validación técnica
 
----
+### 6.1 Decisión consolidada
 
-## 🏗️ Arquitectura del Proyecto
+El **controlador principal aprobado** para la documentación del proyecto es **ZKTeco InBIO 260**.
 
-### Estructura de Archivos
+### 6.2 Contenido pendiente de validación técnica
 
-```
-📦 Sistema-de-Gestión-Multiuso-de-Parqueadero
-├── 📄 InterfazParqueadero.sln          # Solución de Visual Studio
-├── 📄 InterfazParqueadero.csproj       # Archivo de proyecto .NET
-├── 📄 Program.cs                        # Punto de entrada de la aplicación
-├── 📄 Form1.cs                          # Formulario principal (UI y lógica)
-├── 📄 Form1.Designer.cs                 # Diseñador de formulario (auto-generado)
-├── 📄 Form1.resx                        # Recursos del formulario
-├── 📄 ZKTecoManager.cs                  # Gestor de comunicación con hardware
-├── 📄 TarjetasDB.cs                     # Gestor de base de datos de tarjetas
-├── 📄 tarjetas_autorizadas.json        # Almacenamiento local de TAGs (temporal)
-│
-├── 📂 Documentos/
-│   ├── 📂 01_Gestion_Proyecto/
-│   │   ├── 📄 Task_List.md
-│   │   └── 📂 Actas/
-│   │       └── 📄 Acta_Semanal_01.md
-│   ├── 📂 02_Requisitos_y_Analisis/
-│   │   ├── 📂 Arquitectura/
-│   │   │   └── 📄 Informe_Arquitectura_Sistema.pdf
-│   │   ├── 📂 Plantillas/
-│   │   │   └── 📄 Plantilla_IEEE830_Parqueadero.md
-│   │   └── 📂 UX_UI/
-│   │       └── 📄 Propuesta_Formularios.md
-│   ├── 📂 03_Base_de_Datos/
-│   │   └── 📂 Esquema/
-│   │       └── 📄 dbo.sql
-│   ├── 📂 04_Desarrollo/
-│   │   ├── 📂 Estandares/
-│   │   │   └── 📄 Convenciones.md
-│   │   └── 📂 Guia_Git/
-│   │       ├── 📄 Comandos_Git.md
-│   │       └── 📄 Instalacion_Git.md
-│   ├── 📂 05_Operacion/
-│   └── 📂 99_Historico/
-│
-├── 📂 Properties/
-│   ├── 📄 Resources.Designer.cs
-│   └── 📄 Resources.resx
-│
-├── 📂 Resources/                        # Imágenes y recursos visuales
-│
-└── 📂 obj/                              # Archivos de compilación (auto-generado)
-```
+Persisten referencias históricas que no deben tomarse como afirmaciones técnicas consolidadas hasta ser verificadas contra el InBIO 260:
 
-**Documento de arquitectura (actual):**
-`Documentos/02_Requisitos_y_Analisis/Arquitectura/Informe_Arquitectura_Sistema.pdf`
+- mapeo exacto de `Reader 1` para entrada y `Reader 4` para salida;
+- interpretación exacta de eventos `E0`, `E20` y `E27`;
+- uso operativo de `LOCK 1` y `LOCK 2`;
+- cantidad exacta de puertas, lectores, relés y sensores utilizados;
+- compatibilidad exacta de `plcommpro.dll` y `pltcpcomm.dll` con la instalación física objetivo;
+- temporización de pulsos y estrategia final de operación offline.
 
-### Componentes Clave
+## 7. Inventario inicial planificado
 
-#### 1. **Form1.cs** - Interfaz Principal
-- Inicialización de componentes (ZKTecoManager, TarjetasDB)
-- Manejo de eventos de interfaz de usuario
-- Procesamiento de eventos de hardware en tiempo real
-- Actualización de tablas de visualización
-- Control de estado de conexión
+La cifra oficial de planificación documental es:
 
-#### 2. **ZKTecoManager.cs** - Capa de Hardware
-- Importación de funciones nativas del SDK (`plcommpro.dll`)
-- Gestión de conexión TCP/IP con el panel InBIO 206
-- Envío de comandos de control (abrir barrera, cancelar señales)
-- Lectura de eventos en tiempo real (`GetRTLog`)
-- Parsing de eventos RFID
-- Generación de logs de diagnóstico
+- **1.000 TAG RFID**
 
-#### 3. **TarjetasDB.cs** - Capa de Datos
-- Operaciones CRUD sobre tarjetas RFID
-- Serialización/deserialización JSON
-- Validación de autorización de acceso
-- Actualización de estados (habilitada/deshabilitada)
+Las referencias a `600 TAG`, cantidades aproximadas o inventarios distintos deben tratarse como inconsistencias históricas o supuestos pendientes de corrección.
 
-#### 4. **Modelo de Datos - TarjetaRFID**
-```csharp
-public class TarjetaRFID
-{
-    public string Numero { get; set; }            // Número del TAG RFID
-    public string NombreUsuario { get; set; }      // Propietario
-    public string Observaciones { get; set; }      // Notas (placa, tipo vehículo)
-    public DateTime FechaRegistro { get; set; }    // Fecha de alta
-    public bool Habilitada { get; set; }           // Estado activo/inactivo
-}
+## 8. Documentación de gobierno y alcance
+
+Los documentos vigentes del escritorio de garita se concentran en [Documentacion de Escritorio Garita](/E:/a/Documentos/10_Escritorio_Garita/README.md).
+
+- [Identidad_y_Denominacion_Oficial.md](/E:/a/Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Identidad_y_Denominacion_Oficial.md)
+- [Registro_Decisiones.md](/E:/a/Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Registro_Decisiones.md)
+- [Definicion_MVP.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Definicion_MVP.md)
+- [Vision_Sistema_Completo.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Vision_Sistema_Completo.md)
+- [Registro_Stakeholders.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Stakeholders/Registro_Stakeholders.md)
+- [Matriz_RACI_Inicial.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Stakeholders/Matriz_RACI_Inicial.md)
+- [Registro_Inconsistencias_Documentales.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Control/Registro_Inconsistencias_Documentales.md)
+- [Preguntas_Pendientes_PUCESA.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Control/Preguntas_Pendientes_PUCESA.md)
+- [Indice_Maestro_Documentos.md](/E:/a/Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
+- [ERS_Cato_Parking.md](/E:/a/Documentos/10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md)
+
+## 9. Estructura documental relevante
+
+```text
+Documentos/
+├── 10_Escritorio_Garita/
+│   ├── 00_Gobierno_Documental/
+│   ├── 01_Gestion_Proyecto/
+│   ├── 02_Requisitos_y_Negocio/
+│   └── 05_UX_UI/
+├── 01_Gestion_Proyecto/
+├── 02_Requisitos_y_Analisis/
+├── 03_Base_de_Datos/
+└── 99_Historico/
 ```
 
-### Flujo de Operación
-
-```
-┌──────────────┐
-│   Usuario    │
-│  con TAG     │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────────────┐
-│  Sensor de Piso      │  ◄─── Detecta metal debajo del vehículo
-│  (activa lectura)    │
-└──────┬───────────────┘
-       │
-       ▼
-┌──────────────────────┐
-│  Lector RFID         │  ◄─── Reader 1 (entrada) o Reader 4 (salida)
-│  (lee TAG)           │
-└──────┬───────────────┘
-       │
-       ▼
-┌──────────────────────┐
-│  Panel InBIO 206     │  ◄─── Genera evento E0/E20/E27
-│  (procesa lectura)   │
-└──────┬───────────────┘
-       │
-       ▼ (TCP/IP)
-┌──────────────────────┐
-│  ZKTecoManager       │  ◄─── GetRTLog() obtiene evento
-│  (SDK C#)            │
-└──────┬───────────────┘
-       │
-       ▼
-┌──────────────────────┐
-│  Form1               │  ◄─── Evento OnEventoHardware
-│  (lógica de negocio) │
-└──────┬───────────────┘
-       │
-       ▼
-┌──────────────────────┐
-│  TarjetasDB          │  ◄─── Valida si TAG está autorizado
-│  (consulta JSON/SQL) │
-└──────┬───────────────┘
-       │
-   ┌───┴────┐
-   ▼        ▼
-┌──────┐  ┌──────┐
-│ ✅    │  │ ❌   │
-│ SI    │  │ NO   │
-└──┬───┘  └──┬───┘
-   │         │
-   ▼         ▼
-┌──────────────────────┐
-│  ControlDevice()     │  ◄─── Comando LOCK 1 = subir brazo
-│  (activa relay)      │       o no enviar comando
-└──────┬───────────────┘
-       │
-       ▼
-┌──────────────────────┐
-│  Barrera Sube        │  ◄─── Motor físico recibe señal
-│  (acceso concedido)  │
-└──────────────────────┘
-       │
-       ▼
-┌──────────────────────┐
-│  Registro de Acceso  │  ◄─── Se guarda en tabla RegistrosAcceso
-│  (auditoría)         │
-└──────────────────────┘
-```
-
----
-
-## 💻 Tecnologías Utilizadas
-
-### Lenguajes y Frameworks
-
-| Componente | Tecnología | Versión |
-|:-----------|:-----------|:--------|
-| **Framework** | .NET | 8.0 (LTS) |
-| **Lenguaje** | C# | 12.0 |
-| **UI Framework** | Windows Forms | 8.0 |
-| **Arquitectura** | x86 (32-bit) | - |
-
-### Herramientas de Desarrollo
-
-| Herramienta | Versión |
-|:------------|:--------|
-| **Visual Studio Professional 2022** | 17.14.27 (Febrero 2026) |
-| **Visual Studio Code** | Latest |
-| **SQL Server Management Studio** | 22 |
-| **Microsoft SQL Server Express** | 17.0.1000.7 |
-| **EF Core Power Tools** | Latest |
-| **Git** | 2.x+ |
-
-### Hardware y SDKs
-
-| Componente | Descripción |
-|:-----------|:------------|
-| **ZKTeco InBIO 206** | Panel de control de acceso con 2 puertas |
-| **Lectores RFID** | Reader 1 (WD1, WD0) y Reader 4 (GLED, WD1) |
-| **SDK Pull Communication** | plcommpro.dll (ZKTeco oficial) |
-| **Protocolo** | TCP/IP (puerto 4370) |
-
-### Base de Datos (Planificada)
-
-| Componente | Descripción |
-|:-----------|:------------|
-| **Motor** | Microsoft SQL Server Express |
-| **ORM** | Entity Framework Core 8.0+ |
-| **Almacenamiento Actual** | JSON (temporal, migrará a SQL) |
-
-### Librerías y Dependencias
-
-- **System.IO.Ports** - Comunicación serial (futuro)
-- **System.Text.Json** - Serialización JSON
-- **System.Runtime.InteropServices** - P/Invoke para DLL nativa
-- **System.Windows.Forms** - Interfaz gráfica
-
----
-
-## 🔧 Instalación y Configuración
-
-### Requisitos Previos
-
-- **Sistema Operativo:** Windows 10/11 (64-bit)
-- **RAM:** Mínimo 4 GB
-- **.NET 8.0 SDK:** [Descargar aquí](https://dotnet.microsoft.com/download/dotnet/8.0)
-- **Visual Studio 2022** o **Visual Studio Code**
-- **SQL Server Express** (para base de datos futura)
-- **Git:** Para clonar el repositorio
-
-### Paso 1: Clonar el Repositorio
-
-```bash
-git clone https://github.com/JonaAcurio/Sistema-de-Gesti-n-Multiuso-de-Parqueadero.git
-cd Sistema-de-Gesti-n-Multiuso-de-Parqueadero
-```
-
-### Paso 2: Configurar el SDK de ZKTeco
-
-1. Asegurarse de que `plcommpro.dll` esté en el directorio raíz del proyecto o en `C:\Windows\System32\`
-2. La DLL debe ser de 32-bit (coincide con `<PlatformTarget>x86</PlatformTarget>`)
-
-**Nota:** El SDK se incluye con el instalador del panel InBIO o puede solicitarse a ZKTeco.
-
-### Paso 3: Restaurar Dependencias y Compilar
-
-#### Con Visual Studio 2022:
-1. Abrir `InterfazParqueadero.sln`
-2. Click derecho en la solución → **Restaurar paquetes NuGet**
-3. Compilar: **Build → Build Solution** (F6)
-4. Ejecutar: **Debug → Start Debugging** (F5)
-
-#### Con CLI de .NET:
-```bash
-dotnet restore
-dotnet build
-dotnet run
-```
-
-### Paso 4: Configurar Conexión con el Hardware
-
-Al abrir la aplicación:
-
-1. Ir a la pestaña **⚙️ Configuración**
-2. Configurar los parámetros de conexión:
-   - **IP:** `192.168.1.201` (dirección del panel InBIO)
-   - **Puerto:** `4370` (puerto TCP predeterminado)
-   - **Timeout:** `4000` ms
-3. Click en **CONECTAR**
-4. Verificar el estado de conexión en el log
-
-**Configuración de Red del Panel:**
-- Asegurarse de que el panel InBIO esté en la misma red local
-- Verificar que no haya firewalls bloqueando el puerto 4370
-
-### Paso 5: Registrar Tarjetas de Prueba
-
-1. Ir a la pestaña **🎫 Gestión de Tarjetas**
-2. Click en **🔍 DETECTAR** (modo escucha)
-3. Pasar un TAG RFID por el lector
-4. Completar los campos:
-   - **Nº Tarjeta:** (auto-detectado)
-   - **Nombre Usuario:** Nombre del propietario
-   - **Observaciones:** Placa del vehículo, tipo, etc.
-5. Click en **➕ AGREGAR**
-
-### Paso 6: Probar el Sistema
-
-1. Ir a la pestaña **🔖 Control de Acceso (RFID)**
-2. Pasar un TAG registrado por el Reader 1 (entrada)
-3. Verificar que:
-   - Aparece el evento en la tabla
-   - El estado muestra "AUTORIZADO"
-   - La barrera sube automáticamente
-   - El log muestra "✓ TAG AUTORIZADO - Comando Subir enviado"
-
----
-
-## 🗄️ Configuración de Base de Datos
-
-### Estado Actual
-
-El sistema actualmente utiliza **almacenamiento JSON local** para las tarjetas autorizadas:
-- Archivo: `tarjetas_autorizadas.json`
-- Estructura: Array de objetos TarjetaRFID
-- Persistencia automática en cada operación CRUD
-
-### Migración a SQL Server (Próximamente)
-
-#### Estructura de Base de Datos
-
-La base de datos `dbo` contiene las siguientes tablas principales:
-
-**📊 Entidades Principales:**
-
-1. **Roles** - Tipos de usuario (Estudiante, Docente, Administrativo, Guardia, Financiero)
-2. **Usuarios** - Datos personales y credenciales
-3. **Vehiculos** - Información de vehículos registrados
-4. **Tags** - Inventario de tarjetas RFID físicas
-5. **Garajes** - Parqueaderos con capacidad y ocupación
-6. **Tarifas** - Precios por tipo de usuario y franja horaria
-
-**📋 Operaciones:**
-
-7. **Accesos** - Registro de entradas/salidas (historial completo)
-8. **Asignacion_Tags** - Relación TAG ↔ Vehículo
-9. **Tickets** - Tickets de visitantes con cálculo de tarifa
-10. **Pagos** - Transacciones y métodos de pago
-11. **Sanciones** - Multas por incumplimiento
-
-**🔧 Configuración:**
-
-12. **Periodo_Inscripcion** - Ventanas de registro semestral
-13. **Horarios_Garaje** - Horarios de operación por parqueadero
-14. **Franja** - Franjas horarias para tarifas diferenciadas
-15. **Incidencias** - Reporte de fallas técnicas
-
-#### Instalación de la Base de Datos
-
-```bash
-# 1. Abrir SQL Server Management Studio
-# 2. Conectar a la instancia local:
-#    Server: localhost\SQLEXPRESS
-#    Authentication: Windows Authentication
-
-# 3. Ejecutar el script DDL:
-cd Documentos/03_Base_de_Datos/Esquema
-# Abrir dbo.sql y ejecutar en SSMS
-```
-
-#### Modelo Relacional Simplificado
-
-```
-Usuarios ──┬── Vehiculos ──┬── Asignacion_Tags ──── Tags
-           │               │
-           │               └── Accesos ──── Garajes
-           │
-           ├── Sanciones ── Tipo_Sanciones
-           │
-           ├── Pagos ────── Metodos_Pago
-           │
-           └── Inscripciones ── Periodo_Inscripcion
-```
-
-#### Conexión desde C# (Futuro)
-
-**ConnectionString esperado:**
-
-```csharp
-"Server=localhost\\SQLEXPRESS;Database=dbo;Trusted_Connection=True;TrustServerCertificate=True;"
-```
-
-**Entity Framework Core:**
-
-```bash
-# Instalar paquetes NuGet
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-dotnet add package Microsoft.EntityFrameworkCore.Tools
-
-# Generar DbContext desde base de datos existente
-dotnet ef dbcontext scaffold "Server=localhost\SQLEXPRESS;Database=dbo;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
-```
-
----
-
-## 🚀 Cómo Ejecutar el Proyecto
-
-### Ejecución en Modo Debug
-
-```bash
-# Terminal / CMD
-cd Sistema-de-Gesti-n-Multiuso-de-Parqueadero
-dotnet run
-```
-
-O presionar **F5** en Visual Studio.
-
-### Ejecución en Modo Release
-
-```bash
-dotnet build --configuration Release
-cd bin/Release/net8.0-windows
-InterfazParqueadero.exe
-```
-
-### Workflow Típico de Operación
-
-1. **Iniciar Aplicación**
-   - Abrir InterfazParqueadero.exe
-   
-2. **Conectar al Hardware**
-   - Pestaña Configuración → CONECTAR
-   - Verificar log: "✓ ¡CONEXIÓN EXITOSA!"
-
-3. **Monitorear Accesos en Tiempo Real**
-   - Pestaña Control de Acceso (RFID)
-   - Observar eventos en la tabla al pasar TAGs
-
-4. **Gestionar Tarjetas**
-   - Pestaña Gestión de Tarjetas
-   - Agregar, editar, habilitar/deshabilitar
-
-5. **Cerrar Aplicación**
-   - La conexión se cierra automáticamente
-   - Los datos se guardan en tarjetas_autorizadas.json
-
----
-
-## Dependencias entre Módulos
-
-El siguiente diagrama muestra la relación y dependencias entre los módulos del sistema de gestión de parqueaderos.
-
-```mermaid
-graph TD
-
-A[1. Autenticación]
-
-B[2. Configuración]
-C[3. Usuarios y Roles]
-D[4. Vehículos]
-E[5. Tarjetas RFID]
-F[6. Barrera]
-G[7. Accesos]
-H[8. Tarifas / Pagos]
-I[9. Sanciones]
-J[10. Reportes]
-K[11. Incidencias]
-L[12. Visitantes]
-
-A --> B
-A --> C
-A --> D
-A --> E
-A --> F
-A --> G
-A --> H
-A --> I
-A --> J
-A --> K
-A --> L
-
-B --> F
-
-C --> D
-C --> G
-C --> I
-
-D --> E
-D --> G
-
-E --> F
-E --> G
-
-F --> G
-F --> H
-
-G --> H
-G --> J
-
-H --> J
-
-I --> F
-
-H --> L
-F --> L
-```
-
----
-
-## 📊 Estado de Desarrollo
-
-### Versión Actual: 2.0 (Funcional)
-
-**Último Backup:** 2026-02-27
-
-### ✅ Completado (100%)
-
-- [x] Comunicación estable con InBIO 206
-- [x] Lectura de eventos RFID en tiempo real
-- [x] Autorización de acceso con base de datos local
-- [x] Control automático de barrera
-- [x] Gestión completa de tarjetas (CRUD)
-- [x] Registro visual de accesos
-- [x] Sistema anti-rebote
-- [x] Manejo de eventos E0, E20, E27
-- [x] Resolución de conflicto LOCK1/LOCK2
-- [x] Interfaz gráfica completa con 3 pestañas
-
-### 🚧 En Progreso (40%)
-
-- [ ] Migración de JSON a SQL Server (base de datos diseñada)
-- [ ] Integración con Entity Framework Core
-- [ ] Sistema de tarifas y cobros
-- [ ] Gestión de visitantes
-- [ ] Autenticación de usuarios (login)
-
-### 📅 Planificado (0%)
-
-- [ ] Sistema de sanciones automáticas
-- [ ] Reportes administrativos (PDF/Excel)
-- [ ] Dashboard con métricas en tiempo real
-- [ ] Notificaciones por correo electrónico
-- [ ] Sincronización con Active Directory PUCESA
-- [ ] Aplicación móvil para gestión remota
-- [ ] API REST para integración con otros sistemas
-
----
-
-## 🔮 Mejoras Futuras
-
-### Corto Plazo (3-6 meses)
-
-1. **Finalizar migración a SQL Server**
-   - Implementar Entity Framework Core
-   - Crear repositorios para cada entidad
-   - Implementar stored procedures para lógica compleja
-
-2. **Sistema de Usuarios y Roles**
-   - Login con credenciales institucionales
-   - Permisos diferenciados (Guardia, Administrativo, Financiero)
-   - SSO con Microsoft 365 PUCESA
-
-3. **Gestión de Visitantes**
-   - Generación de tickets temporales
-   - Cálculo automático de tarifa por hora
-   - Impresión de comprobantes de pago
-
-### Mediano Plazo (6-12 meses)
-
-4. **Sistema de Reportes**
-   - Ocupación en tiempo real por parqueadero
-   - Historial de accesos con filtros
-   - Exportación a Excel/PDF
-   - Gráficos de uso por franjas horarias
-
-5. **Portal Web Administrativo**
-   - Interfaz web para consultas remotas
-   - Dashboard con indicadores clave
-   - Gestión de tarifas y periodos de inscripción
-
-6. **Integración Financiera**
-   - Conexión con sistema de contabilidad PUCESA
-   - Emisión automática de facturas electrónicas
-   - Pasarela de pagos en línea
-
----
-
-## 👥 Autores y Contribuidores
-
-### Equipo de Desarrollo
-
-| Nombre | Rol | GitHub |
-|:-------|:----|:-------|
-| **Dennys Coronel** | Director | - |
-| **Jonathan Acurio** | Project Management | [@JonaAcurio](https://github.com/JonaAcurio) |
-| **Carlos Parreño** | Project Management | - |
-| **Carlos Ortega** | Developer | - |
-| **Alberto Falconí** | Developer | - |
-| **Jeremy Jácome** | Developer | - |
-| **Sebastián Sanmartín** | Developer | - |
-
-### Institución
-
-**Pontificia Universidad Católica del Ecuador Sede Ambato (PUCESA)**  
-Facultad de Hábitat, Infraestructura y Creatividad
-
----
-
-## 📄 Licencia
-
-Este proyecto es de **carácter estrictamente académico** para la comunidad universitaria de PUCESA.
-
-**Restricciones:**
-- No se permite el uso comercial sin autorización expresa
-- El código fuente es propiedad intelectual de la PUCESA
-- Cualquier derivación o fork debe citar apropiadamente la fuente
-
-**Uso Educativo:**
-Se permite el uso del código con fines educativos y de investigación, siempre que se cite adecuadamente:
-
-```
-Acurio, J., Coronel, D., Falconí, Jácome, J., A., Ortega, C., Parreño, C., & Sanmartín, S. (2026).
-Sistema de Gestión Multiuso de Parqueadero PUCESA.
-Pontificia Universidad Católica del Ecuador Sede Ambato.
-```
-
----
-
-## 📞 Contacto y Soporte
-
-### Reporte de Bugs
-
-Para reportar errores o solicitar nuevas funcionalidades:
-
-1. Abrir un **Issue** en GitHub con la plantilla correspondiente
-2. Incluir:
-   - Descripción detallada del problema
-   - Pasos para reproducir
-   - Capturas de pantalla (si aplica)
-   - Logs del sistema
-
-### Contribuciones
-
-Las contribuciones son bienvenidas siguiendo las convenciones del proyecto:
-
-1. Fork del repositorio
-2. Crear rama con nomenclatura estándar: `feat/nueva-funcionalidad`
-3. Commit con mensajes descriptivos: `feat: agregar validación de placas`
-4. Pull Request con descripción completa de cambios
-
-**Ver:** [Documentos/04_Desarrollo/Estandares/Convenciones.md](Documentos/04_Desarrollo/Estandares/Convenciones.md) para estándares de código
-
----
-
-## 🙏 Agradecimientos
-
-- **ZKTeco** por el SDK y soporte técnico del panel InBIO 206
-- **PUCESA** por el apoyo institucional y recursos para el desarrollo
-- **Comunidad de .NET** por documentación y tutoriales
-- Todos los usuarios beta que probaron el sistema y reportaron mejoras
-
----
-
-## 📚 Documentación Adicional
-
-- [Documentos/README.md](Documentos/README.md) - Índice central de la documentación del proyecto
-- [Task_List.md](Documentos/01_Gestion_Proyecto/Task_List.md) - Lista de tareas y requisitos funcionales
-- [Informe_Arquitectura_Sistema.pdf](Documentos/02_Requisitos_y_Analisis/Arquitectura/Informe_Arquitectura_Sistema.pdf) - Arquitectura del sistema
-- [Convenciones.md](Documentos/04_Desarrollo/Estandares/Convenciones.md) - Estándares de commits y ramas
-- [Comandos_Git.md](Documentos/04_Desarrollo/Guia_Git/Comandos_Git.md) - Guía básica de Git
-- [Instalacion_Git.md](Documentos/04_Desarrollo/Guia_Git/Instalacion_Git.md) - Instalación y configuración de Git
-- [Resumen_para_la_IA.md](Resumen_para_la_IA.md) - Especificaciones técnicas detalladas
-- [README_V2.md](README_V2.md) - Notas de la versión 2.0 funcional
-
----
-
-<div align="center">
-
-**Desarrollado con ❤️ para la comunidad PUCESA**
-
-![PUCESA](https://img.shields.io/badge/PUCESA-Sistema%20de%20Parqueadero-blue)
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4)
-![C#](https://img.shields.io/badge/C%23-12.0-239120)
-![Status](https://img.shields.io/badge/Status-Funcional-success)
-![License](https://img.shields.io/badge/License-Académica-yellow)
-
-</div>
+## 10. Reglas para esta fase
+
+- no modificar código funcional ni esquema SQL;
+- no presentar funcionalidades futuras como implementadas;
+- no asumir aprobaciones que no consten en las decisiones consolidadas;
+- no eliminar evidencia histórica;
+- registrar toda corrección conceptual en el registro de inconsistencias.

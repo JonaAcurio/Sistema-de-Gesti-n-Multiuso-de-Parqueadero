@@ -1,0 +1,28 @@
+# Matriz de Trazabilidad de Requisitos
+
+**Codigo documental:** CP-MTR-001  
+**Version:** 1.1  
+**Estado:** Activo  
+**Fecha:** 2026-07-17
+
+| Requisito | Nombre | Alcance | Modulo | Stakeholder origen | Regla relacionada | Proceso BPMN | Caso de uso | Historia | Datos involucrados | Interfaz relacionada | Caso de prueba | Prioridad | Estado | Aprobador | Observaciones |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| RF-CON-001 | Configurar conexion | MVP | Configuracion | TI PUCESA | RN-GAR-001 | PR-02 | CU-ACC-005 | N/A | configuracion_local | V-CON-001 | CP-CON-001 | MUST | Aprobado para MVP | Responsable institucional por designar | Validacion tecnica de hardware pendiente. |
+| RF-USR-001 | Registrar usuario basico | MVP | Usuarios | Operacion/Seguridad | RN-USR-001 | PR-04 | CU-VEH-001 | N/A | usuario | V-TAG-001 | CP-USR-001 | MUST | Aprobado para MVP | Responsable institucional por designar | Base local minima para asociacion operativa. |
+| RF-VEH-001 | Registrar vehiculo | MVP | Vehiculos | Operacion/Seguridad | RN-VEH-001 | PR-04 | CU-VEH-001, CU-VEH-002 | N/A | vehiculo, usuario | V-TAG-001 | CP-VEH-001 | MUST | Aprobado para MVP | Responsable institucional por designar | Aplica limite de 2 vehiculos. |
+| RF-TAG-001 | Registrar TAG | MVP | TAG RFID | Operacion/Seguridad | RN-TAG-001, RN-TAG-002 | PR-04 | CU-TAG-001 | HU-TAG-001 | tag, usuario, vehiculo | V-TAG-001 | CP-TAG-001 | MUST | Aprobado para MVP | Responsable institucional por designar | Basado en evidencia local. |
+| RF-TAG-002 | Activar/desactivar TAG | MVP | TAG RFID | Operacion/Seguridad | RN-TAG-003 | PR-04 | CU-TAG-002 | HU-TAG-002 | tag, auditoria | V-TAG-001 | CP-TAG-002 | MUST | Aprobado para MVP | Responsable institucional por designar | Conserva historial. |
+| RF-ACC-001 | Validar acceso | MVP | Control de acceso | Seguridad institucional | RN-ACC-001, RN-ACC-002 | PR-02 | CU-ACC-001 | HU-ACC-001 | tag, vehiculo, evento_acceso | V-MON-001 | CP-ACC-001 | MUST | Aprobado para MVP | Responsable institucional por designar | Fuente tecnica observable. |
+| RF-ACC-002 | Autorizar entrada | MVP | Control de acceso | Seguridad institucional | RN-ACC-003 | PR-02 | CU-ACC-002 | N/A | evento_acceso | V-MON-001 | CP-ACC-002 | MUST | Aprobado para MVP | Responsable institucional por designar | Apertura automatica. |
+| RF-ACC-003 | Autorizar salida | MVP | Control de acceso | Seguridad institucional | RN-ACC-004 | PR-02 | CU-ACC-002 | N/A | evento_acceso | V-MON-001 | CP-ACC-003 | MUST | Aprobado con validacion tecnica pendiente | Responsable institucional por designar | Topologia por validar. |
+| RF-ACC-004 | Denegar acceso | MVP | Control de acceso | Seguridad institucional | RN-ACC-002 | PR-02 | CU-ACC-001 | HU-ACC-001 | evento_acceso | V-MON-001 | CP-ACC-004 | MUST | Aprobado para MVP | Responsable institucional por designar | Denegacion trazable. |
+| RF-GAR-001 | Apertura manual | MVP | Garita | Seguridad institucional | RN-ACC-005, RN-AUD-001 | PR-03 | CU-ACC-003 | HU-ACC-002 | apertura_manual, auditoria | V-MAN-001 | CP-ACC-018 | MUST | Aprobado para MVP | Responsable institucional por designar | Motivo obligatorio. |
+| RF-AUD-001 | Registrar intentos | MVP | Auditoria | PUCESA | RN-AUD-001, RN-AUD-002 | PR-02, PR-03 | CU-ACC-004 | HU-ACC-002 | evento_acceso, evento_tecnico | V-MON-001 | CP-AUD-001 | MUST | Aprobado para MVP | Responsable institucional por designar | Base para auditoria. |
+| RF-GAR-002 | Registrar eventos tecnicos | MVP | Garita | TI PUCESA | RN-GAR-002, RN-AUD-002 | PR-07, PR-08 | CU-ACC-005 | HU-GAR-001 | evento_tecnico | V-TEC-001 | CP-GAR-001 | MUST | Aprobado para MVP | Responsable institucional por designar | Diagnostico. |
+| RF-ACC-005 | Filtrar lecturas duplicadas | MVP | Control de acceso | Seguridad institucional | RN-ACC-006 | PR-02 | CU-ACC-001 | N/A | evento_acceso | V-MON-001 | CP-ACC-005 | MUST | Aprobado para MVP | Responsable institucional por designar | Anti-rebote. |
+| RF-SIN-001 | Operar con almacenamiento local | MVP | Sincronizacion | TI PUCESA | RN-SIN-001 | PR-07 | CU-ACC-006 | N/A | cola_sincronizacion | V-TEC-001 | CP-SIN-001 | MUST | Aprobado para MVP | Responsable institucional por designar | Opera con cache local y sincronizacion posterior. |
+| RF-SIN-002 | Recuperarse de desconexion | MVP | Sincronizacion | TI PUCESA | RN-GAR-003 | PR-08 | CU-ACC-005 | HU-GAR-001 | evento_tecnico | V-TEC-001 | CP-SIN-002 | SHOULD | Aprobado para MVP | Responsable institucional por designar | Recuperacion documentada. |
+| RF-AUT-001 | Iniciar sesion con SSO | Sistema completo | Autenticacion | TI PUCESA | RN-SEG-001 | PR-09 | CU-PER-001 | N/A | usuario, sesion, rol | V-AUT-001 | CP-AUT-001 | SHOULD | Pendiente de validacion institucional | TI PUCESA | No implementado. |
+| RF-PER-001 | Publicar periodo | Sistema completo | Periodos | Administracion PUCESA | RN-PER-001, RN-PRI-001 | PR-01, PR-09 | CU-PER-001 | N/A | periodo, prioridad | V-PER-001 | CP-PER-001 | SHOULD | Pendiente de validacion institucional | Administracion PUCESA | Falta orden de prioridades. |
+| RF-PAG-001 | Aprobar pago | Sistema completo | Pagos | Unidad Financiera | RN-PAG-001 | PR-10 | CU-PAG-001 | HU-PAG-001 | solicitud, pago, comprobante | V-PAG-001 | CP-PAG-001 | SHOULD | Pendiente de validacion institucional | Unidad Financiera | Parametros financieros pendientes. |
+| RF-VIS-001 | Registrar visitante | Sistema completo | Visitantes | Seguridad/Administracion | RN-VIS-001 | PR-05 | CU-VIS-001 | N/A | visitante, vehiculo, visita | V-VIS-001 | CP-VIS-001 | COULD | Pendiente de validacion institucional | Seguridad PUCESA | Reglas pendientes. |

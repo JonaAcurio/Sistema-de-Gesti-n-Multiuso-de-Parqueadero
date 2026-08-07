@@ -39,3 +39,18 @@ Durante la primera semana del proyecto, la prioridad fue establecer una comunica
 ---
 **Nota del Consultor:**
 *Para la integración del panel inBio 260 con la red, se requirió registrar las librerías propietarias `plcommpro.dll` y `pltcpcomm.dll` en el entorno Windows. A partir de ahora, la lógica de cierre se centraliza en este panel; es crítico respetar el diagrama de instalación de hardware actual en la garita.*
+
+---
+
+## Fe de erratas documental - 2026-07-17
+
+**Código documental:** CP-ACT-FE-001  
+**Estado:** Nota aclaratoria agregada durante la fase de estabilización conceptual
+
+Esta fe de erratas no reemplaza el contenido histórico del acta. Su propósito es aclarar cómo debe interpretarse en la documentación vigente:
+
+- El acta se conserva como evidencia histórica de avance y no como fuente única de decisiones aprobadas.
+- La denominación oficial vigente del sistema pasó a ser **Cato Parking**, manteniendo `SGP` como referencia histórica.
+- El controlador documental objetivo aprobado es **ZKTeco InBIO 260**.
+- Las referencias específicas a librerías, eventos, lectores, relés y topología de hardware deben leerse como información histórica o técnica preliminar, salvo donde exista validación técnica formal.
+- La plataforma web, SQL Server, SSO y demás módulos institucionales no deben considerarse implementados solo por aparecer mencionados en esta acta.

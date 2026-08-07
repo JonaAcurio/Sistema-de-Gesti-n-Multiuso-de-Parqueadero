@@ -1,66 +1,83 @@
-## Actividades
+# Task List de Estabilización
 
-* [x] Apertura y cierre automático de puertas
-* [x] Uso e implementación de TAGs para control de acceso
-* [x] Instalación de nuevas conexiones electrónicas
-* [ ] Base de datos en proceso de desarrollo
-* [ ] Diseño e implementación de interfaces de usuario
+> Estado actual: documento sustituido para Fase 2.  
+> Usar como fuente vigente `Documentos/01_Gestion_Proyecto/Planificacion/Backlog_Proyecto.md` y `Documentos/01_Gestion_Proyecto/Planificacion/Estado_Entregables.md`.  
+> Este archivo se conserva como historico y no debe recibir nuevos requisitos funcionales.
 
-## Requisitos Funcionales (RF)
+**Código documental:** CP-GPR-001  
+**Versión:** 2.0  
+**Estado:** Borrador de estabilización documental  
+**Fecha:** 2026-07-17  
+**Autor:** Codex sobre documentación existente del proyecto  
+**Revisores:** Equipo del proyecto; Pendiente de validación por PUCESA  
+**Aprobador:** Responsable institucional por designar
 
-**Configuración del Sistema**
+## Historial de cambios
 
-* [ ] **Gestionar Parqueaderos (RF-01):** Crear, editar y listar los parqueaderos con su ubicación y capacidad total.
-* [ ] **Definir Periodos de Registro (RF-02):** Configurar las fechas de inicio y fin para los procesos de registro semestral.
-* [ ] **Bloqueo de Registro por Fechas (RF-03):** Bloqueo automático del sistema si se intenta hacer un registro fuera de las fechas permitidas.
+| Versión | Fecha | Descripción |
+| --- | --- | --- |
+| 2.0 | 2026-07-17 | Reorganiza la lista de trabajo separando prototipo, MVP, sistema completo y pendientes institucionales. |
+| 1.x | 2026-03 a 2026-04 | Lista previa con mezcla de estados de implementación y visión futura. |
 
-**Usuarios y Seguridad**
+## 1. Actividades de estabilización documental
 
-* [ ] **Registro de Usuarios por Rol (RF-04):** Crear cuentas y asignar permisos para Docentes, Estudiantes, Guardias, Financieros y Administradores.
-* [ ] **Autenticación Microsoft SSO (RF-05):** Permitir el acceso seguro utilizando la cuenta institucional.
-* [ ] **Registro de Vehículos (RF-06):** Guardar los datos de los vehículos (placa, modelo, color, tipo) asociados a cada dueño.
-* [ ] **Restricción de Flota por Usuario (RF-07):** Control para asegurar que ningún usuario institucional registre más de 2 vehículos.
+- [x] Consolidar identidad oficial de Cato Parking.
+- [x] Diferenciar prototipo actual, MVP y sistema completo.
+- [x] Crear registro de decisiones, stakeholders e inconsistencias.
+- [x] Identificar decisiones pendientes de validación por PUCESA.
+- [ ] Confirmar responsables institucionales nominales.
+- [ ] Localizar o incorporar la referencia oficial `Marca_Cato_Parking.docx`.
+- [ ] Validar técnicamente las referencias específicas del hardware InBIO 260.
 
-**Gestión de Credenciales (TAGs)**
+## 2. Estado del prototipo actual
 
-* [ ] **Generación de Solicitud de TAG (RF-08):** Generar el pedido de la credencial vinculando al usuario con su vehículo, parqueadero y periodo.
-* [ ] **Inventario de TAGs (RF-10):** Controlar el stock físico (disponibles, asignados, perdidos, dados de baja).
-* [ ] **Gestión de Pérdida y Reposición (RF-11):** Inhabilitar chips perdidos y gestionar el cobro de la nueva credencial.
-* [ ] **Emisión y Control de Estados (RF-12):** Activar, suspender o caducar credenciales para permitir o denegar el paso en las plumas.
+| Elemento | Estado | Observación |
+| --- | --- | --- |
+| Aplicación local de garita en Windows | Implementado en prototipo | Evidencia en código fuente y README estabilizado. |
+| Lectura de TAG RFID | Implementado en prototipo | Evidencia en código fuente. |
+| Conexión TCP/IP con controladora | Implementado en prototipo | Evidencia en código fuente y documentación técnica histórica. |
+| Persistencia local JSON | Implementado en prototipo | No equivale a persistencia central institucional. |
+| Apertura manual | Implementado en prototipo | Debe auditarse bajo lineamiento del MVP. |
 
-**Pagos y Facturación**
+## 3. Alcance del MVP estabilizado
 
-* [ ] **Aprobación/Rechazo de Solicitud (RF-09):** Validar los pagos institucionales, emitir facturas, registrar observaciones obligatorias y cambiar el estado del trámite.
-* [ ] **Configuración de Tarifas Fijas (RF-17):** Ajustar los precios semestrales y mantener la trazabilidad de quién y cuándo hizo el cambio.
-* [ ] **Tarifas Variables y Excepciones (RF-18):** Aplicar tarifas diferenciadas automáticamente (ej. por discapacidad o tipo de vehículo).
+| ID | Elemento | Estado documental | Observación |
+| --- | --- | --- | --- |
+| MVP-01 | Aplicación local de garita operativa | Consolidado | Forma parte del MVP. |
+| MVP-02 | Conexión estable con InBIO 260 | Consolidado con validación técnica pendiente | El modelo queda fijado; detalles técnicos específicos siguen pendientes. |
+| MVP-03 | Lectura RFID en tiempo real | Consolidado | Parte del núcleo mínimo. |
+| MVP-04 | Identificación entrada/salida | Consolidado con validación técnica pendiente | Sujeto a topología física. |
+| MVP-05 | Registro básico de TAG | Consolidado | Debe mantenerse mínimo y verificable. |
+| MVP-06 | Activación/desactivación manual de TAG | Consolidado | Parte del alcance mínimo. |
+| MVP-07 | Validación básica de autorización | Consolidado | No incluye motor completo de reglas institucionales. |
+| MVP-08 | Apertura automática válida | Consolidado | Parte del control mínimo. |
+| MVP-09 | Denegación básica | Consolidado | Parte del control mínimo. |
+| MVP-10 | Apertura manual con motivo | Consolidado | Requisito obligatorio. |
+| MVP-11 | Registro de intentos de acceso | Consolidado | Debe incluir origen y resultado. |
+| MVP-12 | Anti-rebote | Consolidado | Evidencia observada en prototipo. |
+| MVP-13 | Eventos técnicos y errores | Consolidado | Mínimo requerido. |
+| MVP-14 | Persistencia local funcional | Consolidado | Transición a SQL Server planificada. |
+| MVP-15 | Interfaz mínima operativa | Consolidado | Configuración, monitoreo, gestión básica y eventos. |
+| MVP-16 | Pruebas físicas documentadas | Pendiente de ejecución formal | Requisito de cierre del MVP. |
 
-**Operación y Control de Acceso**
+## 4. Funcionalidades del sistema completo no incluidas en el MVP
 
-* [ ] **Registro de Bitácora de Accesos (RF-13):** Guardar historial de cada intento de entrada y salida con resultado (permitido o denegado).
-* [ ] **Validación de Acceso Lógica (RF-14):** Impedir la entrada si hay sanciones, cupo lleno o si está fuera del horario permitido para ese rol.
-* [ ] **Control de Plumas (Auto/Manual) (RF-15):** Apertura automática por chip y apertura manual por el guardia con ingreso de justificación obligatoria.
-* [ ] **Gestión de Acceso y Cobro de Visitantes (RF-16):** Controlar el ingreso de no registrados y gestionar el cobro en efectivo por hora o fracción.
-* [ ] **Aplicación de Sanciones (RF-19):** Bloquear el acceso a usuarios durante el tiempo estipulado por incumplimiento de normas.
+| Tema | Estado documental | Observación |
+| --- | --- | --- |
+| Microsoft SSO | Previsto para sistema completo | No implementado ni incluido en MVP. |
+| Pagos institucionales | Previsto para sistema completo | Pendiente de definición financiera. |
+| Facturación | Previsto para sistema completo | Pendiente de validación institucional. |
+| Tarifas variables | Previsto para sistema completo | Pendiente de decisión. |
+| Visitantes con cobro | Previsto para sistema completo | Pendiente de reglas. |
+| Sanciones automáticas | Previsto para sistema completo | Pendiente de reglamento y catálogo. |
+| Portal web | Previsto para sistema completo | No operativo en esta fase. |
+| Reportes avanzados | Previsto para sistema completo | No operativo en esta fase. |
+| Sincronización productiva web-garita | Previsto para sistema completo | No operativo en esta fase. |
 
-**Reportes y Consultas**
+## 5. Pendientes institucionales críticos
 
-* [ ] **Reportes Financieros (RF-20):** Ver ingresos detallados diferenciando pagos por transferencia institucional y dinero en efectivo en garita.
-* [ ] **Reportes de Usuario Final (RF-21):** Permitir que el usuario estándar vea exclusivamente su propio historial de accesos y estado de solicitudes.
-
-## Requisitos No Funcionales (RNF)
-
-**Seguridad y Confianza**
-
-* [ ] **Seguridad y Auditoría (RNF-01):** Garantizar que cada acción importante (cambio de tarifas, sanciones, aperturas manuales) guarde un registro inmutable.
-* [ ] **Trazabilidad Total (RNF-04):** Permitir reconstruir el historial completo de cualquier usuario, vehículo o credencial por fecha y hora.
-* [ ] **Respaldo de Información (RNF-07):** Sistema de copias de seguridad automáticas y opción de descargar los reportes en formatos PDF y Excel.
-
-**Velocidad y Desempeño**
-
-* [ ] **Disponibilidad del Sistema (RNF-02):** Asegurar que el módulo de garita funcione de forma estable y sin caídas durante toda la jornada.
-* [ ] **Rapidez de Respuesta (RNF-03):** Lograr que la lectura del chip y la decisión de abrir la pluma ocurran en pocos segundos.
-
-**Facilidad de Uso e Integración**
-
-* [ ] **Interfaz Amigable (RNF-05):** Diseñar la pantalla del operador de garita para que permita registrar visitas manuales en 5 clics o menos.
-* [ ] **Conexión con Equipos (RNF-06):** Asegurar que el sistema se comunique fluidamente con Microsoft SSO y el hardware físico (Plumas, TAGs).
+- definir periodos, prioridades y cupos;
+- definir tarifas, reposición de TAG y facturación;
+- definir reglamento, sanciones y visitantes;
+- definir responsables nominales y aprobadores;
+- validar hardware y compatibilidad exacta del controlador.

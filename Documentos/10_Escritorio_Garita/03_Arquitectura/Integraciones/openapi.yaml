@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: Cato Parking Sync API
+  version: 1.0.0
+paths:
+  /sync/eventos:
+    post:
+      summary: Recibe eventos generados en garita
+      responses:
+        '202':
+          description: Evento aceptado
+  /sync/cambios:
+    get:
+      summary: Entrega cambios operativos para la garita
+      responses:
+        '200':
+          description: Cambios obtenidos
+  /sync/confirmaciones:
+    post:
+      summary: Confirma procesamiento de cambios
+      responses:
+        '200':
+          description: Confirmacion registrada
+  /sync/configuracion:
+    get:
+      summary: Obtiene configuracion operativa
+      responses:
+        '200':
+          description: Configuracion obtenida

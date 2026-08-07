@@ -1,176 +1,168 @@
-# Especificación de requisitos de software
+# Especificación de Requisitos de Software
 
-Proyecto: Sistema de Gestión Multisitio de Parqueaderos
+> Estado actual: documento sustituido para Fase 2.  
+> La fuente vigente es `Documentos/02_Requisitos_y_Negocio/ERS_Cato_Parking.md`.  
+> Este archivo se conserva como historico y no debe seguir parchandose como ERS activa.
 
-Revisión: 1.0
+**Sistema:** Sistema Institucional de Gestión de Parqueaderos Cato Parking  
+**Código documental:** CP-SRS-001  
+**Versión:** 2.0  
+**Estado:** Borrador estabilizado para validación institucional  
+**Fecha:** 2026-07-17  
+**Autor:** Codex sobre documentación existente del proyecto  
+**Revisores:** Equipo del proyecto; Pendiente de validación por PUCESA  
+**Aprobador:** Responsable institucional por designar
 
-## Ficha del documento
+## Historial de cambios
 
-| Fecha | Revisión | Autor | Aprobación |
-| :--- | :--- | :--- | :--- |
-| 23/02/2026 | 1.0 | Carlos Parreño<br>Jonathan Acurio | |
-
-Documento validado por las partes en fecha: 09/03/2026
-
-
-## Contenido
+| Versión | Fecha | Descripción |
+| --- | --- | --- |
+| 2.0 | 2026-07-17 | Reescritura estabilizada de la SRS con separación entre prototipo, MVP y sistema completo. |
+| 1.x | 2026-02 a 2026-03 | Versiones previas con mezcla de propuestas, datos nominales y reglas no aprobadas. |
 
 ## 1. Introducción
 
-El propósito de este documento es definir la Especificación de Requisitos de Software (SRS) para el nuevo Sistema de Gestión Multi-Parqueadero Institucional. Este sistema permitirá administrar de forma centralizada la asignación de espacios de estacionamiento, controlar los accesos físicos mediante TAG, gestionar cobros (fijos y por hora/fracción), validar pagos y aplicar reglas de negocio incluyendo sanciones para distintos perfiles de la comunidad universitaria.
+### 1.1 Propósito
 
-### 1.1 Alcance
+Definir una base estabilizada de requisitos para Cato Parking, diferenciando:
 
-El sistema a desarrollar contempla:
-* La administración de múltiples parqueaderos físicos con numeración individual y capacidad variable.
-* La gestión de usuarios y roles diferenciados (Administrador, Financiero, Control/Garita, Docente, Estudiante, Administrativo, Visitante).
-* El registro y control de vehículos (limitado a un máximo de 2 por usuario institucional).
-* La gestión del inventario de credenciales de acceso (aproximadamente 600 TAGs iniciales).
-* La integración con hardware de control de acceso (plumas mecánicas y lectores de TAG).
-* La integración con plataformas externas: inicio de sesión único (Microsoft SSO) y flujo de validación de pagos (transferencias y efectivo).
-* Un módulo completo de reportes, auditoría y aplicación automática de sanciones por mal uso.
+- decisiones aprobadas;
+- requisitos del MVP;
+- visión del sistema completo;
+- pendientes de validación institucional o técnica.
 
-### 1.2 Personal involucrado
+### 1.2 Identidad del sistema
 
-**1.2.1 Gestor del Proyecto**
-| Nombre | Categoría profesional | Responsabilidades | Información de contacto |
-| :--- | :--- | :--- | :--- |
-| Dennys Coronel | Docente | Gestor de proyectos | 099 512 0616 |
+- **Nombre público:** Cato Parking.
+- **Nombre técnico:** Sistema Institucional de Gestión de Parqueaderos Cato Parking.
+- **Institución:** Pontificia Universidad Católica del Ecuador, Sede Ambato (PUCESA).
+- **Contexto:** iniciativa Smart Campus.
 
-**1.2.2 Cliente/Stakeholders**
-| Nombre | Categoría profesional | Responsabilidades | Información de contacto |
-| :--- | :--- | :--- | :--- |
-| | | | |
+### 1.3 Alcance documental
 
-**1.2.3 Equipo de Desarrollo**
-| Nombre | Categoría profesional | Responsabilidades | Información de contacto |
-| :--- | :--- | :--- | :--- |
-| Carlos Ortega | Estudiante | | 096 909 9790 |
-| Jeremy Jacome | Estudiante | | 099 540 8705 |
-| Jonathan Acurio | Estudiante | | 096 341 0492 |
-| Sebastian Sanmartin | Estudiante | | 096 711 0610 |
-| Sebastian Falconi | Estudiante | | 098 194 7131 |
-| David Ojeda | Estudiante | | 098 250 0589 |
-| Carlos Parreño | Estudiante | Levantamiento de requerimientos | 099 972 0694 |
+Esta SRS no declara como implementadas las funcionalidades futuras. El documento distingue expresamente entre:
 
-### 1.3 Definiciones, acrónimos y abreviaturas
+- **prototipo actual:** aplicación local de garita existente;
+- **MVP:** núcleo mínimo validable de control de acceso;
+- **sistema completo:** visión objetivo modular institucional.
 
-* **TAG:** Etiqueta o dispositivo electrónico RFID utilizado para la identificación vehicular.
-* **SSO:** Single Sign-On (Inicio de sesión único), utilizando credenciales de Microsoft institucionales.
-* **Pluma:** Brazo mecánico o barrera física utilizada en las entradas y salidas de los parqueaderos.
-* **MoSCoW:** Método de priorización de requisitos (MUST: Debe tener, SHOULD: Debería tener, COULD: Podría tener, WON'T: No tendrá por ahora).
-* **CA:** Criterio de Aceptación.
+## 2. Glosario mínimo
 
-### 1.4 Resumen
+- **TAG RFID:** credencial física utilizada para identificación vehicular.
+- **Garita:** punto operativo local de control de acceso.
+- **MVP:** producto mínimo viable para validar el núcleo técnico y operativo.
+- **SSO:** autenticación institucional Microsoft prevista para el sistema completo.
+- **PUCESA:** Pontificia Universidad Católica del Ecuador, Sede Ambato.
 
-El resto de este documento detalla la perspectiva del producto, las características de los usuarios, las reglas de negocio principales y, finalmente, el desglose pormenorizado de los requisitos funcionales y no funcionales estructurados mediante prioridades MoSCoW.
+## 3. Contexto del producto
 
----
+### 3.1 Prototipo actual
 
-## 2. Descripción general
+El repositorio evidencia una aplicación local Windows Forms con persistencia JSON y comunicación con controladora ZKTeco. Esta base no debe confundirse con una plataforma institucional completa.
 
-### 2.1 Perspectiva del producto
+### 3.2 Alcance del MVP
 
-El sistema actuará como el núcleo central para la gestión vehicular de la institución, interactuando activamente con el ecosistema tecnológico actual. Depende del directorio activo de Microsoft para la autenticación, del personal Financiero para la validación manual/semiautomática de transferencias, y del hardware de los parqueaderos para aperturas físicas e identificación mediante TAGs.
+El MVP cubre únicamente:
 
-### 2.2 Funcionalidad del producto
+- operación local de garita;
+- lectura de TAG;
+- validación básica de autorización;
+- apertura automática y manual;
+- registro de eventos y persistencia local de pruebas.
 
-* Autenticación restringida a correos institucionales mediante Microsoft SSO.
-* CRUD de vehículos por usuario institucional (límite estricto de 2 placas, excepto para administrador que no dispone de límite).
-* Gestión de reservas, periodos activos y validación de comprobantes de pago.
-* Control de acceso basado en franjas horarias, vigencia, sanciones y cupos disponibles.
-* Gestión de inventario de TAGs (asignación, bloqueos, pérdidas).
-* Módulo de cobro a visitantes en efectivo (cálculo por hora/fracción).
-* Trazabilidad completa y reportes analíticos para administración y finanzas.
+### 3.3 Visión del sistema completo
 
-### 2.3 Características de los usuarios
+El sistema completo contempla autenticación institucional, usuarios, parqueaderos, periodos, financiero, visitantes, sanciones, reportes, auditoría, configuración e integraciones.
 
-* **Administrador del sistema:** Configuración global del multisitio, auditoría completa, reportes y gestión de permisos, gestión de tarifas (fijas y variables), reportes de ingresos.
-* **Financiero:** Gestión de tarifas (fijas y variables), revisión/validación de comprobantes de pagos (transferencias), envío de facturas correspondientes y reportes de ingresos.
-* **Garita:** Operación de ingreso/salida, apertura manual con auditoría, cobro en efectivo a visitantes y registro de incidencias.
-* **Docente:** (Docente tiempo completo / Docente tiempo parcial).
-* **Estudiante:** Usuario institucional sujeto a validación de pagos y franjas horarias (máximo 2 placas).
-* **Administrativo:** Usuario institucional con beneficio de horario extendido para uso de parqueadero todo el día (máximo 2 placas).
-* **Visitante:** Usuario no registrado en el sistema institucional. Genera cobro por hora o fracción pagadero únicamente en efectivo al salir.
-* **Visitantes Alto Nivel:** Se debe definir cuántos lugares se le asignan. Este tipo de usuario no paga ninguna tarifa.
+## 4. Stakeholders y actores
 
-### 2.4 Restricciones
+Los stakeholders institucionales se documentan formalmente en [Registro_Stakeholders.md](/E:/a/Documentos/01_Gestion_Proyecto/Stakeholders/Registro_Stakeholders.md).
 
-* El pago de visitantes requiere un manejo en efectivo controlado exclusivamente en garita, sin integración a la pasarela digital de transferencias.
-* Queda eliminado por completo el uso de tarjetas físicas antiguas, migrando al lote de TAGs nuevos.
-* La apertura manual de las plumas requerirá obligatoriamente el registro de un motivo auditable.
+Actores generales reconocidos:
 
-### 2.5 Suposiciones y dependencias
+- estudiantes;
+- docentes;
+- personal administrativo;
+- personal de seguridad;
+- operadores de garita;
+- visitantes;
+- autoridades;
+- personal financiero;
+- administradores del sistema;
+- personal de tecnología o soporte.
 
-* Se asume la disponibilidad y estabilidad del servicio SSO de Microsoft.
-* Se asume que el hardware en sitio (plumas) está correctamente configurado para recibir peticiones del sistema.
+## 5. Restricciones y decisiones consolidadas
 
-### 2.6 Reglas de Negocio (RB)
+- El controlador documental objetivo es **ZKTeco InBIO 260**.
+- El inventario inicial de planificación es **1.000 TAG RFID**.
+- No se asume reglamento oficial aprobado en esta fase.
+- No se asume integración financiera automática aprobada.
+- No se asume que categorías de usuarios equivalgan automáticamente a roles de software.
 
-| ID | Regla de Negocio | Prioridad |
-| :--- | :--- | :--- |
-| RB-01 | El sistema debe soportar múltiples parqueaderos (multisitio), cada uno con capacidad y reglas configurables. | MUST |
-| RB-02 | Cada parqueadero debe poseer un número de espacios configurable y estados (disponible/ocupado/reservado/fuera de servicio). | MUST |
-| RB-03 | El registro/renovación institucional solo se habilita dentro de fechas de un periodo activo (activador por fechas). | MUST |
-| RB-04 | Docentes, Estudiantes y Administrativos pueden registrar un máximo de 2 placas (vehículos) por usuario. | MUST |
-| RB-05 | Visitantes: cobro por hora o fracción; pago únicamente en efectivo en garita. | MUST |
-| RB-06 | Tarifas ajustables y variables: por periodo (semestral), por tipo de automotor, discapacidad y esquema mixto. | MUST |
-| RB-07 | Horarios: Administrativo ocupa todo el día; otros roles institucionales dependen de horarios y franjas configurables por día. | MUST |
-| RB-08 | Sanciones por mal uso deshabilitan el acceso (por usuario y/o credencial) durante la vigencia estipulada de la sanción. | MUST |
-| RB-09 | Inventario de TAGs: el sistema administrará el stock físico (aprox. 1000 iniciales), asignación, bloqueo y baja. | MUST |
-| RB-10 | Toda apertura manual de pluma debe quedar auditada (quién, cuándo y el motivo). | MUST |
-| RB-11 | El primer TAG se incluye sin costo adicional con el pago del parqueadero y es reutilizable. En caso de pérdida, el usuario repone el valor del TAG según un costo ajustable en el sistema. | MUST |
+## 6. Supuestos y dependencias
 
----
+### 6.1 Supuestos técnicos
 
-## 3. Requisitos específicos
+- la red local permitirá la comunicación entre la aplicación y el controlador;
+- las librerías de comunicación estarán disponibles para pruebas;
+- la topología física de lectores y barreras podrá documentarse.
 
-### 3.1 Requisitos comunes de las interfaces
+### 6.2 Dependencias
 
-**3.1.1 Interfaces de usuario**
-El sistema proveerá paneles web adaptados a cada rol: un dashboard de control ágil para Garita, un panel de reportes para el Administrador, y un portal de autoservicio para Estudiantes/Docentes/Administrativos.
+- validación técnica del hardware;
+- confirmación institucional de periodos, cupos y tarifas;
+- designación de responsables institucionales;
+- políticas de seguridad y datos de PUCESA.
 
-**3.1.2 Interfaces de hardware**
-* El sistema emitirá los comandos hacia las controladoras de las plumas de los parqueaderos.
-* El sistema capturará las lecturas de los dispositivos TAG instalados en los accesos.
+## 7. Requisitos funcionales del MVP
 
-**3.1.3 Interfaces de software**
-* Microsoft API: Para el inicio de sesión único (SSO).
+| ID | Requisito | Estado | Observación |
+| --- | --- | --- | --- |
+| RF-MVP-01 | Configurar conexión local con el controlador | Requerido para MVP | Debe existir interfaz mínima y evidencia de conexión. |
+| RF-MVP-02 | Leer TAG RFID en tiempo real | Requerido para MVP | Parte del núcleo técnico. |
+| RF-MVP-03 | Registrar TAG con datos básicos | Requerido para MVP | Código, estado, usuario, vehículo, observaciones y fecha. |
+| RF-MVP-04 | Activar y desactivar TAG manualmente | Requerido para MVP | Parte de la administración mínima. |
+| RF-MVP-05 | Validar autorización básica | Requerido para MVP | TAG registrado, activo, asociación vigente y vehículo autorizado. |
+| RF-MVP-06 | Abrir barrera automáticamente | Requerido para MVP | Solo ante autorización válida. |
+| RF-MVP-07 | Denegar acceso básico | Requerido para MVP | TAG inexistente o deshabilitado. |
+| RF-MVP-08 | Abrir manualmente con motivo obligatorio | Requerido para MVP | Debe registrar operador, fecha, acceso, motivo y observación. |
+| RF-MVP-09 | Registrar cada intento de acceso | Requerido para MVP | Debe almacenar fecha, tipo, TAG, usuario, vehículo, resultado y origen. |
+| RF-MVP-10 | Evitar lecturas repetidas | Requerido para MVP | Protección anti-rebote. |
+| RF-MVP-11 | Registrar eventos técnicos | Requerido para MVP | Errores y comunicación. |
 
-### 3.2 Requisitos funcionales
+## 8. Requisitos funcionales del sistema completo
 
-| ID | Requisito | Prioridad | Criterio de Aceptación (CA) |
-| :--- | :--- | :--- | :--- |
-| RF-01 | Gestionar Parqueaderos | MUST | Dado un Administrador, cuando registra un parqueadero con capacidad X, entonces el parqueadero aparece en la lista y queda disponible. |
-| RF-02 | Definir Periodos de Registro | MUST | Al crear un periodo, el sistema permite definir tipo, inicio, fin, y muestra su estado (activo/inactivo). |
-| RF-03 | Bloqueo de Registro por Fechas | MUST | Si la fecha actual está fuera del periodo activo, el sistema DENIEGA la solicitud y muestra un mensaje de restricción al usuario. |
-| RF-04 | Registro de Usuarios por Rol | MUST | Al crear un usuario con rol, el sistema lo habilita con los permisos exactos asociados a su rol. |
-| RF-05 | Autenticación Microsoft SSO | MUST | Cuando un usuario institucional inicia sesión con Microsoft, el sistema crea/actualiza su perfil y permite acceso según rol. |
-| RF-06 | Registro de Vehículos | MUST | Cuando se registra un vehículo, la placa queda como registro único por vehículo y se asocia al usuario. |
-| RF-07 | Restricción de Flota por Usuario | MUST | Si el usuario ya tiene 2 vehículos registrados, el sistema impide registrar un tercero y genera un evento de auditoría. |
-| RF-08 | Generación de Solicitud de TAG | MUST | Al enviar la solicitud, esta queda en estado 'Pendiente' y es visible para el rol Financiero. |
-| RF-09 | Aprobación/Rechazo de Solicitud | MUST | Al aprobar, la solicitud cambia a 'Aprobada' y se envía factura; al rechazar, se registra el motivo obligatoriamente. |
-| RF-10 | Inventario de TAGs | MUST | El sistema no permite asignar a un usuario un TAG que no se encuentre previamente en estado 'Disponible'. |
-| RF-11 | Gestión de Pérdida y Reposición | MUST | Al reportar pérdida, el TAG pasa a 'Inactivo/Perdido' y genera solicitud de reposición con costo. (El primer TAG es Gratis). |
-| RF-12 | Emisión y Control de Estados | MUST | Si una credencial es leída pero está 'Suspendida' o 'Vencida', el acceso debe ser denegado por la pluma. |
-| RF-13 | Registro de Bitácora de Accesos | MUST | Cada intento de acceso físico genera un registro de bitácora (permitido/denegado) consultable en reportes. |
-| RF-14 | Validación de Acceso Lógica | MUST | Si existe sanción activa, el parqueadero está lleno, o está fuera de horario, el sistema deniega el acceso aunque el TAG sea VÁLIDO. |
-| RF-15 | Control de Plumas (Auto/Manual) | MUST | Cada apertura manual exige el ingreso de un motivo auditable guardando usuario Garita, fecha-hora y parqueadero. |
-| RF-16 | Gestión de Acceso y Cobro de Visitantes | MUST | PENDIENTE |
-| RF-17 | Configuración de Tarifas Fijas | MUST | Cuando se modifica el valor de una tarifa, el cambio queda versionado (fecha, usuario) para mantener trazabilidad contable. |
-| RF-18 | Tarifas Variables y Excepciones | SHOULD | Al seleccionar un perfil de excepción (p.ej., discapacidad), el sistema aplicará automáticamente la tarifa diferenciada. |
-| RF-19 | Aplicación de Sanciones | MUST | Con una sanción activa en el sistema, el usuario no puede ingresar; al expirar el tiempo de castigo, recupera acceso. |
-| RF-20 | Reportes Financieros | MUST | El reporte distingue contablemente los ingresos por transferencia (institucionales) vs dinero en efectivo (visitantes). |
-| RF-21 | Reportes de Usuario Final | SHOULD | Un usuario estándar solo puede acceder a su propia información histórica y estado de solicitudes, sin ver datos de terceros. |
+| ID | Requisito | Estado | Observación |
+| --- | --- | --- | --- |
+| RF-SC-01 | Autenticación Microsoft SSO | Previsto para sistema completo | No forma parte del MVP. |
+| RF-SC-02 | Gestión central de usuarios, perfiles y roles | Previsto para sistema completo | Matriz final pendiente. |
+| RF-SC-03 | Administración de múltiples parqueaderos | Previsto para sistema completo | Visión objetivo aprobada. |
+| RF-SC-04 | Gestión de periodos y prioridades | Previsto para sistema completo | Fechas y orden pendientes. |
+| RF-SC-05 | Gestión institucional de vehículos | Previsto para sistema completo | Límites definitivos pendientes. |
+| RF-SC-06 | Solicitudes e inscripciones | Previsto para sistema completo | Flujo final pendiente de aprobación. |
+| RF-SC-07 | Inventario central de TAG | Previsto para sistema completo | Ciclo de vida completo. |
+| RF-SC-08 | Módulo financiero | Previsto para sistema completo | No aprobado a nivel de reglas finales. |
+| RF-SC-09 | Visitantes | Previsto para sistema completo | Reglas pendientes. |
+| RF-SC-10 | Sanciones | Previsto para sistema completo | Catálogo y reglamento pendientes. |
+| RF-SC-11 | Reportes y auditoría | Previsto para sistema completo | Alcance detallado posterior. |
+| RF-SC-12 | Integración web y sincronización | Previsto para sistema completo | No implementado en esta fase. |
 
-### 3.3 Requisitos no funcionales
+## 9. Requisitos no funcionales estabilizados
 
-| ID | Requerimiento | Prioridad | Criterio de Aceptación (CA) |
-| :--- | :--- | :--- | :--- |
-| RNF-01 | Seguridad: Control de acceso granular por roles, permisos y auditoría obligatoria en acciones críticas. | MUST | Toda acción de impacto (cambio de tarifas, sanciones, aprobaciones, apertura manual) genera un registro inmutable de auditoría. |
-| RNF-02 | Disponibilidad: Operación estable y resiliente en horario institucional; soporte de interfaz de garita con latencia ultrabaja. | MUST | El módulo operativo de garita debe operar sin interrupciones perceptibles durante toda la jornada institucional. |
-| RNF-03 | Rendimiento: Validación de acceso vehicular en garita en pocos segundos en condiciones normales. | MUST | Cada validación de hardware (lectura credencial -> decisión de pluma) debe responder en tiempo operativo para asegurar el flujo. |
-| RNF-04 | Trazabilidad: Bitácora completa e inalterable de todos los accesos, pagos, aprobaciones y sanciones. | MUST | El administrador debe poder reconstruir el historial completo de cualquier usuario, vehículo o credencial por fecha y hora. |
-| RNF-05 | Usabilidad: Interfaz de operador de garita diseñada en pocos pasos y con mensajes visuales claros de decisión. | SHOULD | Un operador de garita debe poder registrar una operación manual de ingreso/salida de visitante en ≤5 clics o toques. |
-| RNF-06 | Interoperabilidad: Integración fluida y segura con Microsoft SSO y controladores físicos (Plumas, TAG). | MUST | El sistema autentica correctamente el token de Microsoft y emite/consume eventos hacia el hardware según la configuración. |
-| RNF-07 | Respaldo y Exportación: Generación de backups de base de datos y exportación de todos los reportes operativos a formatos estándar. | SHOULD | Todos los reportes listados permiten descarga directa en PDF y Excel; existe una tarea de respaldo (backup) programable. |
+| ID | Requisito | Estado | Observación |
+| --- | --- | --- | --- |
+| RNF-01 | Trazabilidad de accesos y aperturas manuales | Requerido para MVP | Debe existir registro verificable. |
+| RNF-02 | Operación local durante pruebas | Requerido para MVP | Persistencia local funcional. |
+| RNF-03 | Registro de eventos técnicos | Requerido para MVP | Debe apoyar diagnóstico. |
+| RNF-04 | Disponibilidad objetivo institucional | Pendiente de decisión | Valor pendiente de aprobación. |
+| RNF-05 | Integración con SSO | Previsto para sistema completo | No parte del MVP. |
+| RNF-06 | Respaldo y recuperación institucional | Pendiente de decisión | Depende de TI PUCESA. |
+
+## 10. Pendientes de validación
+
+- topología exacta del hardware InBIO 260;
+- periodos, prioridades, cupos y límites finales;
+- reglas financieras y de visitantes;
+- reglamento y sanciones;
+- infraestructura productiva;
+- responsables nominales.

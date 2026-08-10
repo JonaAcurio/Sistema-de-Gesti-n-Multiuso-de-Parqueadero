@@ -1,9 +1,9 @@
 # ERS Cato Parking
 
 **Codigo documental:** CP-ERS-001  
-**Version:** 1.1  
+**Version:** 1.2  
 **Estado:** Borrador formal para validacion institucional  
-**Fecha:** 2026-07-17
+**Fecha:** 2026-08-10
 
 ## 1. Control documental
 
@@ -70,7 +70,7 @@ Los stakeholders formales estan en `Registro_Stakeholders.md`. Los que aprueban 
 
 - La garita opera en Windows con comunicacion hacia el controlador local.
 - El MVP debe poder decidir accesos aun sin servicios centrales.
-- El MVP se enfoca exclusivamente en conectar hardware, detectar TAG, registrar entradas y salidas y sincronizar eventos.
+- El MVP se concentra principalmente en la operacion local de garita, incluyendo la conexion con hardware, la gestion operativa minima de usuarios, vehiculos y TAG, el control de entradas y salidas, la auditoria basica y los mecanismos de continuidad local necesarios para dicha operacion.
 - El sistema completo agrega servicios web e integraciones institucionales.
 
 ## 12. Supuestos y dependencias
@@ -724,5 +724,6 @@ Aplican las preguntas de `Preguntas_Pendientes_PUCESA.md`, en especial responsab
 
 | Version | Fecha | Descripcion |
 | --- | --- | --- |
+| 1.2 | 2026-08-10 | Sincroniza control documental y corrige la formulacion del alcance del MVP para alinearlo con los RF vigentes. |
 | 1.1 | 2026-07-18 | Ajusta alcance al escritorio de garita, agrega usuarios y vehiculos basicos, y excluye sanciones. |
 | 1.0 | 2026-07-17 | Creacion de la ERS formal de Fase 2. |

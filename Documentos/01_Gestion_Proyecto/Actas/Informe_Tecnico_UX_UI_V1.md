@@ -18,7 +18,7 @@
 
 El contenido técnico vigente del informe UX/UI se mantiene en:
 
-[Informe_Tecnico_UX_UI_V1.md](/E:/a/Documentos/01_Gestion_Proyecto/Informes_Tecnicos/Informe_Tecnico_UX_UI_V1.md)
+[Informe_Tecnico_UX_UI_V1.md](../Informes_Tecnicos/Informe_Tecnico_UX_UI_V1.md)
 
 ## 2. Motivo
 

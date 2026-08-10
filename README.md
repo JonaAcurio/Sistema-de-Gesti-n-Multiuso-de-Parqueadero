@@ -2,9 +2,9 @@
 
 **Subtítulo:** Sistema Institucional de Gestión de Parqueaderos de PUCESA  
 **Código documental:** CP-README-001  
-**Versión:** 2.0  
+**Versión:** 2.1  
 **Estado:** Borrador de estabilización documental  
-**Fecha:** 2026-07-17  
+**Fecha:** 2026-08-10  
 **Autor:** Codex sobre documentación existente del proyecto  
 **Revisores:** Equipo del proyecto; Pendiente de validación por PUCESA  
 **Aprobador:** Responsable institucional por designar
@@ -13,6 +13,7 @@
 
 | Versión | Fecha | Descripción |
 | --- | --- | --- |
+| 2.1 | 2026-08-10 | Corrige navegacion relativa, refleja la estructura vigente e incorpora la nueva capa documental de pruebas. |
 | 2.0 | 2026-07-17 | Reestructura el README como fuente de contexto estable; separa prototipo, MVP y sistema completo; consolida nombre oficial e inconsistencias documentales. |
 | 1.x | 2026-03 a 2026-04 | Versiones previas del proyecto con mezcla de alcance implementado y visión futura. |
 
@@ -122,7 +123,7 @@ La visión objetivo de Cato Parking contempla, de forma modular y no implementad
 - integración y sincronización;
 - operación y soporte.
 
-La descripción detallada de esta visión se mantiene en [Vision_Sistema_Completo.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Vision_Sistema_Completo.md).
+La descripción detallada de esta visión se mantiene en [Vision_Sistema_Completo.md](Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Vision_Sistema_Completo.md).
 
 ## 6. Hardware y validación técnica
 
@@ -151,18 +152,22 @@ Las referencias a `600 TAG`, cantidades aproximadas o inventarios distintos debe
 
 ## 8. Documentación de gobierno y alcance
 
-Los documentos vigentes del escritorio de garita se concentran en [Documentacion de Escritorio Garita](/E:/a/Documentos/10_Escritorio_Garita/README.md).
+Los documentos vigentes del escritorio de garita se concentran en [Documentacion de Escritorio Garita](Documentos/10_Escritorio_Garita/README.md).
 
-- [Identidad_y_Denominacion_Oficial.md](/E:/a/Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Identidad_y_Denominacion_Oficial.md)
-- [Registro_Decisiones.md](/E:/a/Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Registro_Decisiones.md)
-- [Definicion_MVP.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Definicion_MVP.md)
-- [Vision_Sistema_Completo.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Vision_Sistema_Completo.md)
-- [Registro_Stakeholders.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Stakeholders/Registro_Stakeholders.md)
-- [Matriz_RACI_Inicial.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Stakeholders/Matriz_RACI_Inicial.md)
-- [Registro_Inconsistencias_Documentales.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Control/Registro_Inconsistencias_Documentales.md)
-- [Preguntas_Pendientes_PUCESA.md](/E:/a/Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Control/Preguntas_Pendientes_PUCESA.md)
-- [Indice_Maestro_Documentos.md](/E:/a/Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
-- [ERS_Cato_Parking.md](/E:/a/Documentos/10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md)
+- [Identidad_y_Denominacion_Oficial.md](Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Identidad_y_Denominacion_Oficial.md)
+- [Registro_Decisiones.md](Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Registro_Decisiones.md)
+- [Definicion_MVP.md](Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Definicion_MVP.md)
+- [Vision_Sistema_Completo.md](Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Alcance/Vision_Sistema_Completo.md)
+- [Registro_Stakeholders.md](Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Stakeholders/Registro_Stakeholders.md)
+- [Matriz_RACI_Inicial.md](Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Stakeholders/Matriz_RACI_Inicial.md)
+- [Registro_Inconsistencias_Documentales.md](Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Control/Registro_Inconsistencias_Documentales.md)
+- [Preguntas_Pendientes_PUCESA.md](Documentos/10_Escritorio_Garita/01_Gestion_Proyecto/Control/Preguntas_Pendientes_PUCESA.md)
+- [Indice_Maestro_Documentos.md](Documentos/10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
+- [ERS_Cato_Parking.md](Documentos/10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md)
+- [Documento_Arquitectura_Escritorio_Garita.md](Documentos/10_Escritorio_Garita/03_Arquitectura/Documento_Arquitectura_Escritorio_Garita.md)
+- [Modelo_Conceptual.md](Documentos/10_Escritorio_Garita/04_Datos/Modelo_Conceptual.md)
+- [Inventario_Vistas.md](Documentos/10_Escritorio_Garita/05_UX_UI/Inventario_Vistas.md)
+- [README.md del historico](Documentos/99_Historico/Documentacion_Funcional_Pre_Estabilizacion/README.md)
 
 ## 9. Estructura documental relevante
 
@@ -172,10 +177,15 @@ Documentos/
 │   ├── 00_Gobierno_Documental/
 │   ├── 01_Gestion_Proyecto/
 │   ├── 02_Requisitos_y_Negocio/
-│   └── 05_UX_UI/
+│   ├── 03_Arquitectura/
+│   ├── 04_Datos/
+│   ├── 05_UX_UI/
+│   └── 06_Pruebas/
 ├── 01_Gestion_Proyecto/
 ├── 02_Requisitos_y_Analisis/
-├── 03_Base_de_Datos/
+├── 04_Desarrollo/
+├── PDF/
+├── Imagenes/
 └── 99_Historico/
 ```
 

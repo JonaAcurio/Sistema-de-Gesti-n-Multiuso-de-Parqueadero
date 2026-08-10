@@ -1,6 +1,6 @@
 # Documentacion de Escritorio Garita
 
-**Fecha:** 2026-07-18  
+**Fecha:** 2026-08-10  
 **Estado:** Vigente
 
 ## Proposito
@@ -31,4 +31,5 @@ Esta carpeta concentra la documentacion activa de la aplicacion de escritorio de
 - `03_Arquitectura/`
 - `04_Datos/`
 - `05_UX_UI/`
+- `06_Pruebas/`
 - `99_Historico/`

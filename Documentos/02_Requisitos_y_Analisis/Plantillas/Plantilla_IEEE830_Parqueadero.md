@@ -76,7 +76,7 @@ El sistema completo contempla autenticación institucional, usuarios, parqueader
 
 ## 4. Stakeholders y actores
 
-Los stakeholders institucionales se documentan formalmente en [Registro_Stakeholders.md](/E:/a/Documentos/01_Gestion_Proyecto/Stakeholders/Registro_Stakeholders.md).
+Los stakeholders institucionales se documentan formalmente en [Registro_Stakeholders.md](../../10_Escritorio_Garita/01_Gestion_Proyecto/Stakeholders/Registro_Stakeholders.md).
 
 Actores generales reconocidos:
 

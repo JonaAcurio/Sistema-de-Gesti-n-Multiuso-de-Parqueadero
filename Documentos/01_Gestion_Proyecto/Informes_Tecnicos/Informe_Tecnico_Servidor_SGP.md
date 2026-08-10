@@ -1,5 +1,7 @@
 # INFORME TÉCNICO DE INGENIERÍA: DESPLIEGUE Y CONFIGURACIÓN DE SERVIDOR INSTITUCIONAL
 
+> Nota de publicacion: este documento resume la arquitectura y el despliegue sin exponer datos operativos sensibles del entorno institucional.
+
 **Proyecto:** Sistema de Gestión de Parqueaderos PUCESA (SGP)
 **Versión de Documento:** 1.0 (Entorno de Despliegue Configurado)
 **Fecha de Actividad:** Lunes, 16 de Marzo de 2026
@@ -9,15 +11,15 @@
 
 ## 1. Resumen Arquitectónico (Abstract)
 
-El presente informe detalla el proceso de aprovisionamiento, configuración y validación operativa del servidor central institucional designado por la PUCESA (IP Local: `192.168.1.219`). Este servidor, gobernado bajo entorno Windows Server de 64 bits, fue acondicionado arquitectónicamente para alojar el ecosistema web del SGP (Internet Information Services + .NET 8 Hosting Bundle) y servir como nodo centralizado de persistencia de datos relacionales mediante la integración nativa de SQL Server 2016 Engine.
+El presente informe detalla el proceso de aprovisionamiento, configuración y validación operativa del servidor central institucional designado por la PUCESA. Este servidor, gobernado bajo entorno Windows Server de 64 bits, fue acondicionado arquitectónicamente para alojar el ecosistema web del SGP (Internet Information Services + .NET 8 Hosting Bundle) y servir como nodo centralizado de persistencia de datos relacionales mediante la integración nativa de SQL Server 2016 Engine.
 
 ## 2. Acceso y Aprovisionamiento del Entorno
 
 Para garantizar la seguridad perimetral de la infraestructura de la universidad, el acceso a la máquina host se realizó a través de un túnel cifrado y protocolo de acceso remoto.
 
 *   **Método de Conexión:** Virtual Private Network (VPN Institucional) acoplada a protocolo RDP (Remote Desktop Protocol).
-*   **Vector de Acceso (IPv4):** `192.168.1.219`
-*   **Credenciales de Dominio/Host:** `pqambato\acceso`
+*   **Vector de Acceso (IPv4):** resguardado por la institucion.
+*   **Credenciales de Dominio/Host:** resguardadas por la institucion.
 *   **Auditoría de Hardware Inicial:** Se certificó mediante diagnóstico interno que la arquitectura del procesador (x64) y la memoria RAM instalada cumplen con los requerimientos mínimos sostenibles exigidos por el motor SQL y el entorno de ejecución .NET.
 
 ## 3. Configuración de la Capa de Aplicación (Web Server & Runtime)
@@ -42,11 +44,11 @@ El servidor también asumirá el rol físico de base de datos, centralizando tra
 *   **Motor (RDBMS):** `Microsoft SQL Server 2016` (Service Pack 2).
 *   **Roles y Features instaladas:** `SQL Engine` (Excluyendo servicios analíticos no requeridos para priorizar memoria).
 *   **Identificador de Instancia:** `MSSQLSERVER` (Instancia por defecto, puerto nativo TCP 1433).
-*   **Aprovisionamiento de Seguridad:** Autenticación mixta y definición de usuario administrador local `SEBAS\sebas`.
+*   **Aprovisionamiento de Seguridad:** Autenticación mixta y definición de usuario administrador local del entorno.
 
 ### 4.2. Administración y Trazabilidad Local
 *   **Herramienta de Gestión Operativa:** Despliegue de `SQL Server Management Studio (SSMS)` de uso exclusivo en RDP para auditoría de tablas y gestión de permisos del pool de desarrolladores.
-*   **Certificación de Acceso:** Conexión exitosa contra el Server Name `SEBAS` vía `Windows Authentication`. Se habilitó formalmente la regla *Trust Server Certificate* eliminando el bloqueo SSL de capa de transporte.
+*   **Certificación de Acceso:** Conexión exitosa vía `Windows Authentication`. Se habilitó formalmente la regla *Trust Server Certificate* eliminando el bloqueo SSL de capa de transporte.
 *   **Validación del Motor:** Retorno de versión exacto mediante ejecución T-SQL: `SELECT @@VERSION;`.
 
 ## 5. Arquitectura Final de Componentes y Despliegue de Esquema
@@ -71,7 +73,7 @@ graph TD
 ```
 
 **Resumen Operativo Global:** 
-La instancia designada `192.168.1.219` se encuentra nominalmente configurada y certificada tanto para alojar aplicaciones compiladas ASP.NET, como para orquestar la gestión completa de persistencia multi-rol requerida para futuros despliegues en Staging / Producción.
+La instancia designada por la institucion se encuentra nominalmente configurada y certificada tanto para alojar aplicaciones compiladas ASP.NET, como para orquestar la gestión completa de persistencia multi-rol requerida para futuros despliegues en Staging / Producción.
 
 ---
 

@@ -1,9 +1,9 @@
 # Indice Maestro de Documentos
 
 **Codigo documental:** CP-GOB-004  
-**Version:** 1.2  
+**Version:** 1.3  
 **Estado:** Borrador controlado  
-**Fecha:** 2026-07-18
+**Fecha:** 2026-08-10
 
 ## Objetivo
 
@@ -22,6 +22,7 @@ Concentrar la estructura documental activa de la aplicacion de escritorio de gar
 | Gobierno | Registro_Decisiones.md | Vigente | Base para fuentes y estados. |
 | Gobierno | Glosario_Cato_Parking.md | Vigente | Fuente terminologica de Fase 2. |
 | Gobierno | Indice_Maestro_Documentos.md | Vigente | Este documento. |
+| Gobierno | Auditoria_Exhaustiva_Trazabilidad_y_Cobertura_2026-08-07.md | Vigente como diagnostico historico | Fotografia del estado auditado el 2026-08-07; no sustituye una auditoria de cierre. |
 | Gestion | Definicion_MVP.md | Vigente | Define el alcance minimo del escritorio. |
 | Gestion | Vision_Sistema_Completo.md | Vigente | Solo se conserva como frontera de integracion con la plataforma central. |
 | Gestion | Registro_Stakeholders.md | Vigente | Identifica stakeholders. |
@@ -38,8 +39,8 @@ Concentrar la estructura documental activa de la aplicacion de escritorio de gar
 | Requisitos | Requisitos_No_Funcionales.md | Vigente | Catalogo medible de RNF. |
 | Requisitos | Backlog_Funcional.md | Vigente | Capa de planificacion funcional. |
 | Requisitos | Matriz_Trazabilidad_Requisitos.md | Vigente | Trazabilidad integral. |
-| Requisitos | Procesos_BPMN/*.md | Vigente | Modelos editables de procesos. |
-| Requisitos | Casos_de_Uso/*.md | Vigente | Catalogo de interacciones. |
+| Requisitos | Procesos_BPMN/*.md | Vigente con excepcion historica | `PR-06_Sanciones.md` se conserva solo como referencia historica fuera del alcance vigente. |
+| Requisitos | Casos_de_Uso/*.md | Vigente con excepcion historica | `CU_Sanciones.md` se conserva solo como referencia historica fuera del alcance vigente. |
 | UX/UI | Arquitectura_Informacion.md | Vigente | Organizacion por tareas. |
 | UX/UI | Mapa_Navegacion.md | Vigente | Relacion entre vistas. |
 | UX/UI | Flujos_por_Rol.md | Vigente | Flujos operativos por actor. |
@@ -54,6 +55,10 @@ Concentrar la estructura documental activa de la aplicacion de escritorio de gar
 | Arquitectura | 03_Arquitectura/Despliegue/* | Vigente | Ambientes e infraestructura del escritorio. |
 | Arquitectura | 03_Arquitectura/Pruebas_Arquitectura/* | Vigente | Evidencia y plan tecnico de validacion. |
 | Datos | 04_Datos/* | Vigente | Modelo de datos local y relacion con central. |
+| Pruebas | 06_Pruebas/README.md | Vigente | Define la estructura y regla de materializacion de casos de prueba. |
+| Pruebas | 06_Pruebas/Casos_Prueba/* | Vigente cuando exista contenido | Reserva la materializacion de `CP-*`. |
+| Pruebas | 06_Pruebas/Evidencias/* | Vigente cuando exista contenido | Evidencia de ejecucion de pruebas. |
+| Pruebas | 06_Pruebas/Matriz_Resultados_Pruebas.md | Vigente | Seguimiento de definicion, ejecucion y evidencia de `CP-*`. |
 
 ## Documentos sustituidos
 
@@ -67,3 +72,4 @@ Concentrar la estructura documental activa de la aplicacion de escritorio de gar
 
 - Ningun documento historico debe usarse como fuente de aprobacion vigente sin enlace expreso desde un documento actual.
 - La carpeta `10_Escritorio_Garita` es la fuente oficial para documentacion activa del escritorio.
+- La capa de pruebas se considera vigente desde la creacion de `06_Pruebas/`, aunque sus `CP-*` sigan pendientes de materializacion.

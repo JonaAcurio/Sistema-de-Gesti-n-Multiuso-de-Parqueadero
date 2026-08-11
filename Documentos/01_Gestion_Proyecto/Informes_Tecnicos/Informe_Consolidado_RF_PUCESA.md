@@ -8,6 +8,13 @@
 > - las decisiones aprobadas se leen desde `Documentos/00_Gobierno_Documental/Registro_Decisiones.md`;
 > - la separación entre prototipo, MVP y sistema completo se rige por los documentos de alcance creados en 2026-07-17;
 > - cualquier capacidad aquí descrita que exceda el MVP debe entenderse como visión del sistema completo o propuesta pendiente de validación.
+>
+> **Estado histórico / sustituido**
+>
+> Las expresiones como "fuente de verdad oficial", "versión oficial", "revisado y auditado" o "listo para stakeholders" que permanecen en el cuerpo corresponden al estado histórico del documento en abril de 2026 y no representan su vigencia actual.
+>
+> Fuente vigente:
+> `Documentos/10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md`
 
 ## Sistema de Gestión de Parqueaderos e Identificación Vehicular — PUCESA
 

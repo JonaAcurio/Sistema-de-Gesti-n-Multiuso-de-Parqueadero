@@ -1,58 +1,54 @@
-# 📘 Guía de Documentación del Proyecto
+# Guia de Documentacion del Proyecto
 
-Esta guía explica la estructura de carpetas y el contenido de la documentación del sistema de gestión de parqueadero.
+**Fecha:** 2026-08-10  
+**Estado:** Guia general actualizada
 
-## 📂 Estructura de Carpetas
+Esta guia explica como leer la documentacion del proyecto sin confundir artefactos vigentes con documentos heredados.
 
-La documentación se organiza en las siguientes categorías principales dentro de la carpeta `Documentos/`:
+## Punto de entrada actual
 
-### 📁 01_Gestion_Proyecto
-Contiene toda la información administrativa y técnica de alto nivel.
--   **Actas_de_Reuniones/**: Minutas de las reuniones semanales (Semanas 1 a 4) y guías de redacción.
--   **Informes_Tecnicos/**: Documentos técnicos específicos como el diseño de la base de datos, configuración del servidor, UX/UI y solicitudes de hardware.
--   `Task_List.md`: Seguimiento detallado de tareas y pendientes.
+La documentacion vigente del escritorio de garita debe leerse desde:
 
-### 📁 02_Requisitos_y_Analisis
-Documentación sobre qué debe hacer el sistema y cómo se diseñó.
--   **Arquitectura/**: Diagramas de componentes y lógica del sistema.
--   **Plantillas/**: Formatos estándar para nuevos documentos.
--   **UX_UI/**: Mockups y lineamientos de experiencia de usuario.
+1. [README principal](../README.md)
+2. [Documentos/10_Escritorio_Garita/README.md](10_Escritorio_Garita/README.md)
+3. [Indice_Maestro_Documentos.md](10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
 
-### 📁 03_Base_de_Datos
-Todo lo relacionado con el almacenamiento de datos.
--   **Esquema/**: Diagramas de entidad-relación y scripts SQL.
+## Estructura activa
 
-### 📁 04_Desarrollo
-Información técnica para desarrolladores y mantenimiento.
--   **Estandares/**: Reglas de codificación y naming.
--   **Guia_Git/**: Procedimientos para el control de versiones.
--   `Guia_Errores_y_Soluciones.md`: **[IMPORTANTE]** Historial de bugs corregidos y cómo actuar ante fallos comunes.
+La fuente documental activa del escritorio se organiza en:
 
----
+- `10_Escritorio_Garita/00_Gobierno_Documental/`
+- `10_Escritorio_Garita/01_Gestion_Proyecto/`
+- `10_Escritorio_Garita/02_Requisitos_y_Negocio/`
+- `10_Escritorio_Garita/03_Arquitectura/`
+- `10_Escritorio_Garita/04_Datos/`
+- `10_Escritorio_Garita/05_UX_UI/`
+- `10_Escritorio_Garita/06_Pruebas/`
 
-## 🛠️ Documentos Clave
+## Documentos clave
 
-1.  **[Guía de Errores y Soluciones](file:///e:/a/Documentos/04_Desarrollo/Guia_Errores_y_Soluciones.md)**: Referencia rápida para resolución de problemas conocidos.
-2.  **[Task List](file:///e:/a/Documentos/01_Gestion_Proyecto/Task_List.md)**: Estado actual del proyecto.
-3.  **[README Principal](file:///e:/a/README.md)**: Resumen técnico y guía de instalación.
+1. [ERS_Cato_Parking.md](10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md): base funcional vigente.
+2. [Matriz_Trazabilidad_Requisitos.md](10_Escritorio_Garita/02_Requisitos_y_Negocio/Matriz_Trazabilidad_Requisitos.md): trazabilidad estructural y estado de prueba.
+3. [Backlog_Proyecto.md](10_Escritorio_Garita/01_Gestion_Proyecto/Planificacion/Backlog_Proyecto.md): seguimiento de trabajo vigente.
+4. [Guia_Errores_y_Soluciones.md](04_Desarrollo/Guia_Errores_y_Soluciones.md): referencia técnica de soporte.
 
-> [!NOTE]
-> Toda la documentación nueva debe seguir los estándares definidos en la carpeta `02_Requisitos_y_Analisis/Plantillas`.
-## Nota de estabilización documental - 2026-07-17
+## Documentos heredados
 
-Durante la fase de estabilización conceptual, la fuente de verdad documental del proyecto pasa a depender prioritariamente de:
+Los siguientes documentos pueden seguir siendo utiles como referencia historica, pero no deben usarse como fuente vigente de alcance:
 
-- `Documentos/00_Gobierno_Documental/`
-- `Documentos/01_Gestion_Proyecto/Alcance/`
-- `Documentos/01_Gestion_Proyecto/Control/`
-- `Documentos/01_Gestion_Proyecto/Stakeholders/`
+- `01_Gestion_Proyecto/Task_List.md`
+- `02_Requisitos_y_Analisis/Plantillas/Plantilla_IEEE830_Parqueadero.md`
+- `02_Requisitos_y_Analisis/UX_UI/Propuesta_Formularios.md`
+- `01_Gestion_Proyecto/Informes_Tecnicos/*.md`
 
-Toda nueva redacción debe distinguir explícitamente entre:
+## Regla de redaccion
 
-- decisión aprobada;
-- decisión propuesta;
-- supuesto técnico;
-- requisito pendiente de validación;
+Toda nueva documentacion debe distinguir explicitamente entre:
+
+- decision aprobada;
+- decision propuesta;
+- supuesto tecnico;
+- requisito pendiente de validacion;
 - funcionalidad implementada;
 - funcionalidad en desarrollo;
 - funcionalidad prevista para el sistema completo.

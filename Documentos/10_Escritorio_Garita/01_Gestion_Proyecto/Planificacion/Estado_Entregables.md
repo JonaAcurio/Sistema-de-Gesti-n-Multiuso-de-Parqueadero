@@ -1,9 +1,9 @@
 # Estado de Entregables
 
 **Codigo documental:** CP-PLA-003  
-**Version:** 1.0  
+**Version:** 1.1  
 **Estado:** Activo  
-**Fecha:** 2026-07-17
+**Fecha:** 2026-08-10
 
 | Entregable | Estado | Resultado esperado | Resultado actual |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@
 | Casos de uso | Aprobado internamente | Casos minimos del MVP y casos del sistema completo | Cumplido. |
 | ERS formal | Aprobado internamente | Requisitos atomicos, fuente y aceptacion | Cumplido. |
 | RNF medibles | Aprobado internamente | Medicion o pendiente explicita | Cumplido. |
-| Matriz de trazabilidad | Aprobado internamente | Trazabilidad de origen a prueba | Cumplido. |
+| Matriz de trazabilidad | Aprobado internamente | Trazabilidad de origen a prueba | Cumplido estructuralmente; materializacion y ejecucion de casos de prueba pendiente. |
 | Backlog funcional | Aprobado internamente | Historias derivadas de requisitos aprobados | Cumplido. |
 | UX/UI reestructurado | Aprobado internamente | Vistas agrupadas por tarea | Cumplido. |
 | Auditoria Fase 2 | Aprobado internamente | Validacion anti-falsos-positivos | Cumplido. |

@@ -5,6 +5,9 @@
 **Estado:** Ejecutada internamente  
 **Fecha:** 2026-08-07
 
+> Nota posterior:
+> Los hallazgos descritos corresponden al estado auditado del 2026-08-07. Varias correcciones fueron aplicadas posteriormente y deben verificarse mediante una auditoria de cierre independiente.
+
 ## Objetivo
 
 Verificar si la documentacion vigente del escritorio de garita puede considerarse consistente, navegable y trazable de extremo a extremo, distinguiendo entre:

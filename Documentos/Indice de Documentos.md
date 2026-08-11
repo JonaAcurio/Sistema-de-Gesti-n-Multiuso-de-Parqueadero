@@ -1,9 +1,9 @@
 # Índice de Documentos
 
 **Código documental:** CP-IND-001  
-**Versión:** 2.0  
-**Estado:** Borrador de estabilización documental  
-**Fecha:** 2026-07-17  
+**Versión:** 2.1  
+**Estado:** Índice general de redirección  
+**Fecha:** 2026-08-10  
 **Autor:** Codex sobre estructura documental existente  
 **Revisores:** Equipo del proyecto; Pendiente de validación por PUCESA  
 **Aprobador:** Responsable institucional por designar
@@ -12,52 +12,50 @@
 
 | Versión | Fecha | Descripción |
 | --- | --- | --- |
+| 2.1 | 2026-08-10 | Convierte este documento en índice general de redirección hacia la estructura vigente de `10_Escritorio_Garita`. |
 | 2.0 | 2026-07-17 | Incorpora la nueva estructura de gobierno, alcance, stakeholders y control. |
 | 1.x | 2026-03 | Índice previo del repositorio. |
 
-## 1. Estructura general
+## 1. Regla de lectura
 
-- `00_Gobierno_Documental/`: identidad oficial y registro de decisiones.
-- `01_Gestion_Proyecto/`: alcance, control, stakeholders, task list, actas e informes técnicos.
-- `02_Requisitos_y_Analisis/`: especificación de requisitos, arquitectura y propuesta de formularios.
-- `03_Base_de_Datos/`: esquema SQL de referencia.
-- `04_Desarrollo/`: guías y estándares técnicos.
-- `05_Operacion/`: reservado para operación futura.
-- `99_Historico/`: destino recomendado para documentos sustituidos cuando se formalice la reorganización.
+La documentacion vigente del escritorio de garita ya no se gobierna desde las rutas antiguas de `Documentos/01_Gestion_Proyecto/` ni `Documentos/02_Requisitos_y_Analisis/`.
 
-## 2. Documentos vigentes de referencia
+La fuente activa debe leerse prioritariamente desde:
 
-### Gobierno documental
+- [Documentos/10_Escritorio_Garita/README.md](10_Escritorio_Garita/README.md)
+- [Indice_Maestro_Documentos.md](10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
 
-- [Identidad y Denominación Oficial](00_Gobierno_Documental/Identidad_y_Denominacion_Oficial.md)
-- [Registro de Decisiones](00_Gobierno_Documental/Registro_Decisiones.md)
+## 2. Estructura vigente de referencia
 
-### Alcance y control
+- `10_Escritorio_Garita/00_Gobierno_Documental/`
+- `10_Escritorio_Garita/01_Gestion_Proyecto/`
+- `10_Escritorio_Garita/02_Requisitos_y_Negocio/`
+- `10_Escritorio_Garita/03_Arquitectura/`
+- `10_Escritorio_Garita/04_Datos/`
+- `10_Escritorio_Garita/05_UX_UI/`
+- `10_Escritorio_Garita/06_Pruebas/`
+- `99_Historico/`
 
-- [Definición del MVP](01_Gestion_Proyecto/Alcance/Definicion_MVP.md)
-- [Visión del Sistema Completo](01_Gestion_Proyecto/Alcance/Vision_Sistema_Completo.md)
-- [Registro de Inconsistencias Documentales](01_Gestion_Proyecto/Control/Registro_Inconsistencias_Documentales.md)
-- [Preguntas Pendientes para PUCESA](01_Gestion_Proyecto/Control/Preguntas_Pendientes_PUCESA.md)
-- [Task List de Estabilización](01_Gestion_Proyecto/Task_List.md)
+## 3. Documentos vigentes de entrada
 
-### Stakeholders
+- [README del escritorio de garita](10_Escritorio_Garita/README.md)
+- [Índice Maestro de Documentos](10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
+- [ERS_Cato_Parking.md](10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md)
+- [Matriz_Trazabilidad_Requisitos.md](10_Escritorio_Garita/02_Requisitos_y_Negocio/Matriz_Trazabilidad_Requisitos.md)
+- [Backlog_Proyecto.md](10_Escritorio_Garita/01_Gestion_Proyecto/Planificacion/Backlog_Proyecto.md)
 
-- [Registro de Stakeholders](01_Gestion_Proyecto/Stakeholders/Registro_Stakeholders.md)
-- [Matriz RACI Inicial](01_Gestion_Proyecto/Stakeholders/Matriz_RACI_Inicial.md)
+## 4. Documentos sustituidos de alta visibilidad
 
-### Requisitos y análisis
+Los siguientes documentos no deben seguir interpretandose como vigentes:
 
-- [Especificación de Requisitos de Software](02_Requisitos_y_Analisis/Plantillas/Plantilla_IEEE830_Parqueadero.md)
-- [Propuesta de Formularios](02_Requisitos_y_Analisis/UX_UI/Propuesta_Formularios.md)
-- [Análisis de Lógica de Negocio](02_Requisitos_y_Analisis/Arquitectura/Analisis_Logica_Negocio.md)
-- [Informe de Arquitectura (PDF)](02_Requisitos_y_Analisis/Arquitectura/Informe_Arquitectura_Sistema.pdf)
+- `01_Gestion_Proyecto/Task_List.md`
+- `02_Requisitos_y_Analisis/Plantillas/Plantilla_IEEE830_Parqueadero.md`
+- `02_Requisitos_y_Analisis/UX_UI/Propuesta_Formularios.md`
 
-### Base de datos
+Sus reemplazos formales se detallan en el Índice Maestro.
 
-- [Esquema SQL de referencia](03_Base_de_Datos/Esquema/dbo.sql)
+## 5. Observaciones
 
-## 3. Observaciones de trazabilidad
-
-- Existen rutas duplicadas entre `Actas/`, `Actas_de_Reuniones/` e `Informes_Tecnicos/`.
-- Mientras no se ejecute la depuración histórica completa, debe privilegiarse la lectura de los documentos de gobierno, alcance y control como fuente de verdad.
-- Los documentos históricos no deben eliminarse; deben reubicarse controladamente cuando el equipo lo decida.
+- Este documento ya no clasifica artefactos legacy como vigentes.
+- Las rutas heredadas se conservan por trazabilidad, referencia histórica o insumos de transición.
+- Toda lectura institucional debe resolverse primero en `10_Escritorio_Garita/`.

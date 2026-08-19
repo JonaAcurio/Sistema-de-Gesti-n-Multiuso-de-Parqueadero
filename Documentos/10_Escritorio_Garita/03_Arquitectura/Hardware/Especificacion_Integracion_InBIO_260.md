@@ -44,3 +44,33 @@
 - degradado
 - reconectando
 - error
+
+## Inventario documentado
+
+| Elemento | Estado |
+| --- | --- |
+| Controlador InBIO 260 | Objetivo confirmado |
+| Lectores RFID | Por validar mapeo exacto |
+| Reles y sensores | Por validar cableado exacto |
+| Barrera | Presente en entorno de garita |
+| Equipo Windows de garita | Nodo de ejecucion local |
+| Red local | Requerida para controlador y API |
+
+## Mapeo de lectores, reles y sensores
+
+| Acceso logico | Dispositivo | Reader | Rele | Sensor | Estado |
+| --- | --- | --- | --- | --- | --- |
+| Entrada principal | InBIO 260 | Por validar | Por validar | Por validar | Pendiente de validacion tecnica |
+| Salida principal | InBIO 260 | Por validar | Por validar | Por validar | Pendiente de validacion tecnica |
+
+## Matriz de eventos y comandos
+
+| Tipo | Codigo o accion | Interpretacion actual | Estado |
+| --- | --- | --- | --- |
+| Evento | E0 | Acceso concedido usado por el prototipo | Pendiente de validacion |
+| Evento | E20 | Variante de acceso concedido usada por el prototipo | Pendiente de validacion |
+| Evento | E27 | Lectura utilizada en salida por el prototipo | Pendiente de validacion |
+| Comando | LOCK 1 | Pulso asociado a movimiento de barrera | Pendiente de validacion |
+| Comando | LOCK 2 | Pulso asociado a movimiento de barrera | Pendiente de validacion |
+
+Los detalles técnicos de eventos, lectores, relés, sensores, firmware, IP, puerto y compatibilidad de DLL permanecen pendientes de validación formal. Las referencias al comportamiento observado del prototipo no fijan la topología final.

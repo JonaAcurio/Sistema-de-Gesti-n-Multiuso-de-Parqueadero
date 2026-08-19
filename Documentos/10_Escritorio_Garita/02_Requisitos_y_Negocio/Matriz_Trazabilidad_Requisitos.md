@@ -1,11 +1,13 @@
 # Matriz de Trazabilidad de Requisitos
 
 **Codigo documental:** CP-MTR-001  
-**Version:** 1.2  
-**Estado:** Activo  
-**Fecha:** 2026-08-10
+**Version:** 2.0
+**Estado:** Activo como trazabilidad estructural; verificacion pendiente
+**Fecha:** 2026-08-18
 
-| Requisito | Nombre | Alcance | Modulo | Stakeholder origen | Regla relacionada | Proceso BPMN | Caso de uso | Historia | Datos involucrados | Interfaz relacionada | Caso de prueba | Estado de prueba | Prioridad | Estado | Aprobador | Observaciones |
+> La matriz conecta artefactos documentales existentes. Los casos `CP-*` son identificadores previstos, no pruebas ejecutadas ni artefactos materializados. “Aprobado para MVP” refleja el baseline documental interno; no equivale a aprobacion institucional de PUCESA.
+
+| Requisito | Nombre | Alcance | Modulo | Stakeholder origen | Regla relacionada | Proceso textual | Caso de uso | Historia | Datos involucrados | Interfaz relacionada | Caso de prueba previsto | Estado de prueba | Prioridad | Estado | Aprobador | Observaciones |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | RF-CON-001 | Configurar conexion | MVP | Configuracion | TI PUCESA | RN-GAR-001 | PR-02 | CU-ACC-005 | N/A | configuracion_local | V-CON-001 | CP-CON-001 | Pendiente de materializacion | MUST | Aprobado para MVP | Responsable institucional por designar | Validacion tecnica de hardware pendiente. |
 | RF-USR-001 | Registrar usuario basico | MVP | Usuarios | Operacion/Seguridad | RN-USR-001 | PR-04 | CU-VEH-001 | N/A | usuario | V-TAG-001 | CP-USR-001 | Pendiente de materializacion | MUST | Aprobado para MVP | Responsable institucional por designar | Base local minima para asociacion operativa. |

@@ -2,8 +2,10 @@
 
 **Codigo documental:** CP-PRB-001  
 **Version:** 1.0  
-**Estado:** Estructura inicial  
-**Fecha:** 2026-08-10
+**Estado:** Estructura inicial; sin pruebas materializadas ni ejecutadas
+**Fecha:** 2026-08-18
+
+> Esta matriz registra identificadores previstos y no constituye evidencia de ejecución. Cada `CP-*` debe tener un artefacto propio y una evidencia asociada antes de cambiar de estado.
 
 | Caso de prueba | Requisito | Estado de definicion | Estado de ejecucion | Evidencia | Observaciones |
 | --- | --- | --- | --- | --- | --- |

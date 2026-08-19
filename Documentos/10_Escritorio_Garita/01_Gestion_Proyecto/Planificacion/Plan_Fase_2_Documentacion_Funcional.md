@@ -17,7 +17,7 @@ Completar una documentacion funcional coherente, trazable y auditable para Cato 
 | 1 | Glosario | Un termino, una definicion oficial. |
 | 2 | Actores, roles y permisos | Cada funcion asignable a actor y permiso. |
 | 3 | Reglas de negocio | Ninguna funcionalidad depende de una regla desconocida sin marcar. |
-| 4 | Procesos BPMN | Cada proceso tiene flujo normal, alternativo y excepciones. |
+| 4 | Modelo textual de procesos | Cada proceso tiene flujo normal, alternativas y excepciones; BPMN formal queda fuera de este artefacto. |
 | 5 | Casos de uso | Cada interaccion relevante tiene actor, precondicion y resultado. |
 | 6 | Requisitos funcionales | Cada requisito es atomico, verificable y con fuente. |
 | 7 | Requisitos no funcionales | Ningun RNF ambiguo sin medicion o pendiente explicito. |
@@ -32,7 +32,7 @@ Completar una documentacion funcional coherente, trazable y auditable para Cato 
 - Registro_Stakeholders.md
 - Preguntas_Pendientes_PUCESA.md
 - README.md estabilizado
-- Evidencia observable del prototipo local
+- Documentacion vigente del corpus; la evidencia historica solo sirve como contexto y no sustituye una decision documental.
 
 ## Restricciones
 

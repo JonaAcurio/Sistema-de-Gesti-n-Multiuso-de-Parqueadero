@@ -1,9 +1,11 @@
 # Registro de Decisiones
 
 **Código documental:** CP-GOB-002  
-**Versión:** 1.1  
+**Versión:** 2.0
 **Estado:** Borrador de estabilización documental  
-**Fecha:** 2026-07-17  
+**Fecha:** 2026-08-18
+
+> Las decisiones de este registro se basan en el corpus documental y en lineamientos documentados. Las referencias a artefactos técnicos históricos solo conservan hipótesis del prototipo; no convierten el código ni una implementación observable en fuente de verdad ni en validación institucional.
 **Autor:** Codex sobre insumos existentes del proyecto  
 **Revisores:** Equipo del proyecto; Pendiente de validación por PUCESA  
 **Aprobador:** Responsable institucional por designar
@@ -33,8 +35,8 @@
 | DA-003 | Contexto Smart Campus | 2026-07-17 | Lineamientos de estabilización | APROBADA | Responsable institucional por designar | README; visión; stakeholders | No implica aprobación de todas las funcionalidades futuras. |
 | DA-004 | Controlador principal: ZKTeco InBIO 260 | 2026-07-17 | Lineamientos de estabilización | APROBADA | Responsable institucional por designar | README; informes UX/UI; hardware; inconsistencias | Sustituye referencias históricas a InBIO 206 como nombre del modelo objetivo. |
 | DA-005 | Inventario inicial planificado: 1.000 TAG | 2026-07-17 | Lineamientos de estabilización | APROBADA | Responsable institucional por designar | README; SRS; formularios; inconsistencias | Cifra oficial de planificación. |
-| DA-006 | Existencia de aplicación local de garita | 2026-07-17 | Repositorio actual y lineamientos | APROBADA | Responsable institucional por designar | README; MVP; visión | Base del prototipo actual. |
-| DA-007 | Control de acceso mediante TAG RFID | 2026-07-17 | Repositorio actual y lineamientos | APROBADA | Responsable institucional por designar | README; MVP; SRS; formularios | Núcleo funcional mínimo. |
+| DA-006 | Existencia de aplicación local de garita | 2026-07-17 | Documentación vigente y lineamientos | APROBADA | Responsable institucional por designar | README; MVP; visión | Base documental del prototipo actual. |
+| DA-007 | Control de acceso mediante TAG RFID | 2026-07-17 | Documentación vigente y lineamientos | APROBADA | Responsable institucional por designar | README; MVP; SRS; formularios | Núcleo funcional mínimo documentado. |
 | DA-008 | Necesidad de registrar entradas y salidas | 2026-07-17 | Lineamientos de estabilización | APROBADA | Responsable institucional por designar | README; MVP; SRS | Registro mínimo exigido. |
 | DA-009 | Necesidad de diferenciar usuarios institucionales | 2026-07-17 | Lineamientos de estabilización | APROBADA | Responsable institucional por designar | visión; stakeholders; SRS | La matriz de roles queda pendiente de formalización final. |
 | DA-010 | Necesidad de operación y auditoría | 2026-07-17 | Lineamientos de estabilización | APROBADA | Responsable institucional por designar | MVP; visión; SRS | Incluye aperturas manuales y eventos técnicos. |
@@ -52,14 +54,14 @@
 | DA-022 | Límite funcional adoptado: 2 vehículos por usuario | 2026-07-18 | Definición actual del equipo | APROBADA | Equipo del proyecto | ERS; reglas; visión web | Regla vigente para el sistema. |
 | DA-023 | La app de escritorio opera con caché local y sincronización diferida | 2026-07-18 | Definición actual del equipo | APROBADA | Equipo del proyecto | README; ERS; RNF; trazabilidad | Si se cae la conectividad, la operación continúa y luego sincroniza. |
 | DA-024 | El catálogo de sanciones no pertenece al alcance funcional del equipo actual | 2026-07-18 | Definición actual del equipo | APROBADA | Equipo del proyecto | ERS; reglas; trazabilidad; preguntas pendientes | No se documentará como funcionalidad propia de esta fase. |
-| DT-001 | Reader 1 para entrada y Reader 4 para salida | 2026-07-17 | Código y README previos | APROBADA CON VALIDACIÓN TÉCNICA PENDIENTE | Responsable técnico de hardware ZKTeco | README; informe UX/UI; inconsistencias | Evidencia en código, pero sin validación formal sobre InBIO 260. |
-| DT-002 | Códigos de evento E0, E20 y E27 | 2026-07-17 | Código y README previos | APROBADA CON VALIDACIÓN TÉCNICA PENDIENTE | Responsable técnico de hardware ZKTeco | README; informe UX/UI; inconsistencias | Debe confirmarse semántica exacta. |
-| DT-003 | Comandos LOCK 1 y LOCK 2 | 2026-07-17 | Código y README previos | APROBADA CON VALIDACIÓN TÉCNICA PENDIENTE | Responsable técnico de hardware ZKTeco | README; informe UX/UI | Debe confirmarse correspondencia con relés y barreras. |
-| DT-004 | Cantidad exacta de puertas, lectores y relés en uso | 2026-07-17 | Código e informes previos | APROBADA CON VALIDACIÓN TÉCNICA PENDIENTE | Responsable técnico de hardware ZKTeco | README; hardware; inconsistencias | La documentación actual no es concluyente. |
-| DT-005 | Compatibilidad exacta de plcommpro.dll y pltcpcomm.dll con InBIO 260 | 2026-07-17 | Acta histórica e informes previos | APROBADA CON VALIDACIÓN TÉCNICA PENDIENTE | Responsable técnico de hardware ZKTeco | README; actas; informe UX/UI | Existe uso referenciado, falta validación formal. |
-| DT-006 | Temporización de pulsos | 2026-07-17 | Código e informes previos | APROBADA CON VALIDACIÓN TÉCNICA PENDIENTE | Responsable técnico de hardware ZKTeco | README; informe UX/UI | No hay parámetro aprobado institucionalmente. |
-| DT-007 | Comportamiento de sensores | 2026-07-17 | Código e informes previos | APROBADA CON VALIDACIÓN TÉCNICA PENDIENTE | Responsable técnico de hardware ZKTeco | hardware; informe UX/UI | Debe confirmarse cableado y lógica de campo. |
-| DT-008 | Estrategia definitiva de operación offline | 2026-07-17 | Prototipo actual | APROBADA CON VALIDACIÓN TÉCNICA PENDIENTE | TI PUCESA y soporte técnico | MVP; visión; preguntas pendientes | Hoy existe operación local, no estrategia definitiva aprobada. |
+| DT-001 | Reader 1 para entrada y Reader 4 para salida | 2026-07-17 | Documentación técnica histórica del prototipo | PENDIENTE DE VALIDACIÓN TÉCNICA | Responsable técnico de hardware ZKTeco | hardware; inconsistencias | Hipótesis técnica; no fija la topología del InBIO 260. |
+| DT-002 | Códigos de evento E0, E20 y E27 | 2026-07-17 | Documentación técnica histórica del prototipo | PENDIENTE DE VALIDACIÓN TÉCNICA | Responsable técnico de hardware ZKTeco | hardware; inconsistencias | Debe confirmarse semántica exacta. |
+| DT-003 | Comandos LOCK 1 y LOCK 2 | 2026-07-17 | Documentación técnica histórica del prototipo | PENDIENTE DE VALIDACIÓN TÉCNICA | Responsable técnico de hardware ZKTeco | hardware | Debe confirmarse correspondencia con relés y barreras. |
+| DT-004 | Cantidad exacta de puertas, lectores y relés en uso | 2026-07-17 | Informes técnicos históricos | PENDIENTE DE VALIDACIÓN TÉCNICA | Responsable técnico de hardware ZKTeco | hardware; inconsistencias | La documentación actual no es concluyente. |
+| DT-005 | Compatibilidad exacta de plcommpro.dll y pltcpcomm.dll con InBIO 260 | 2026-07-17 | Acta histórica e informes previos | PENDIENTE DE VALIDACIÓN TÉCNICA | Responsable técnico de hardware ZKTeco | hardware; preguntas pendientes | Falta validación formal. |
+| DT-006 | Temporización de pulsos | 2026-07-17 | Informes técnicos históricos | PENDIENTE DE VALIDACIÓN TÉCNICA | Responsable técnico de hardware ZKTeco | hardware | No hay parámetro aprobado institucionalmente. |
+| DT-007 | Comportamiento de sensores | 2026-07-17 | Informes técnicos históricos | PENDIENTE DE VALIDACIÓN TÉCNICA | Responsable técnico de hardware ZKTeco | hardware | Debe confirmarse cableado y lógica de campo. |
+| DT-008 | Estrategia definitiva de operación offline | 2026-07-17 | Documentación del prototipo y arquitectura objetivo | PENDIENTE DE VALIDACIÓN TÉCNICA | TI PUCESA y soporte técnico | MVP; visión; preguntas pendientes | La continuidad local está documentada; la estrategia definitiva requiere validación. |
 | PD-001 | Fechas exactas de los periodos | 2026-07-17 | Estabilización | PENDIENTE DE DECISIÓN | PUCESA | visión; preguntas pendientes | Valor pendiente de aprobación. |
 | PD-002 | Días entre prioridades | 2026-07-17 | Estabilización | PENDIENTE DE DECISIÓN | PUCESA | visión; preguntas pendientes | Parámetro pendiente de aprobación. |
 | PD-003 | Orden definitivo de prioridades | 2026-07-17 | Estabilización | PENDIENTE DE DECISIÓN | PUCESA | stakeholders; visión | No consolidado. |

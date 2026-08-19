@@ -9,9 +9,9 @@ Esta guia explica como leer la documentacion del proyecto sin confundir artefact
 
 La documentacion vigente del escritorio de garita debe leerse desde:
 
-1. [README principal](../README.md)
-2. [Documentos/10_Escritorio_Garita/README.md](10_Escritorio_Garita/README.md)
-3. [Indice_Maestro_Documentos.md](10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
+1. [README principal](../../../../README.md)
+2. [Documentos/10_Escritorio_Garita/README.md](../../../10_Escritorio_Garita/README.md)
+3. [Indice_Maestro_Documentos.md](../../../10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
 
 ## Estructura activa
 
@@ -27,10 +27,10 @@ La fuente documental activa del escritorio se organiza en:
 
 ## Documentos clave
 
-1. [ERS_Cato_Parking.md](10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md): base funcional vigente.
-2. [Matriz_Trazabilidad_Requisitos.md](10_Escritorio_Garita/02_Requisitos_y_Negocio/Matriz_Trazabilidad_Requisitos.md): trazabilidad estructural y estado de prueba.
-3. [Backlog_Proyecto.md](10_Escritorio_Garita/01_Gestion_Proyecto/Planificacion/Backlog_Proyecto.md): seguimiento de trabajo vigente.
-4. [Guia_Errores_y_Soluciones.md](04_Desarrollo/Guia_Errores_y_Soluciones.md): referencia técnica de soporte.
+1. [ERS_Cato_Parking.md](../../../10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md): base funcional vigente.
+2. [Matriz_Trazabilidad_Requisitos.md](../../../10_Escritorio_Garita/02_Requisitos_y_Negocio/Matriz_Trazabilidad_Requisitos.md): trazabilidad estructural y estado de prueba.
+3. [Backlog_Proyecto.md](../../../10_Escritorio_Garita/01_Gestion_Proyecto/Planificacion/Backlog_Proyecto.md): seguimiento de trabajo vigente.
+4. [Guia_Errores_y_Soluciones.md](../../../04_Desarrollo/Guia_Errores_y_Soluciones.md): referencia técnica de soporte.
 
 ## Documentos heredados
 

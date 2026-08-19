@@ -3,7 +3,9 @@
 **Codigo documental:** CP-RNF-001  
 **Version:** 1.1  
 **Estado:** Borrador para validacion institucional  
-**Fecha:** 2026-07-17
+**Fecha:** 2026-08-18
+
+> Los estados “Aprobado internamente” y “Pendiente de validacion” describen el estado documental del baseline. No representan aprobacion institucional ni ejecucion de pruebas.
 
 ## Rendimiento
 

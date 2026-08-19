@@ -1,9 +1,9 @@
 # Registro de Inconsistencias Documentales
 
 **Código documental:** CP-CTL-001  
-**Versión:** 1.1  
+**Versión:** 2.0
 **Estado:** Borrador de estabilización documental  
-**Fecha:** 2026-08-10  
+**Fecha:** 2026-08-18
 **Autor:** Codex sobre insumos existentes del proyecto  
 **Revisores:** Equipo del proyecto; Pendiente de validación por PUCESA  
 **Aprobador:** Responsable institucional por designar
@@ -27,10 +27,12 @@
 | INC-006 | Funcionalidades planificadas presentadas como alcance consolidado o implementado | README anterior, SRS previa, formularios, informes RF | Corregida documentalmente | Se separa prototipo actual, MVP y sistema completo; los documentos heredados se marcan como historicos o de referencia | README; MVP; vision; indices; guias |
 | INC-007 | Contradicciones entre prototipo local y sistema futuro | README anterior y Task List | Corregida documentalmente | Se documenta que el prototipo usa JSON local y que SQL Server/SSO/web pertenecen a fases posteriores; el backlog vigente sustituye al Task List | README; Backlog_Proyecto; guias |
 | INC-008 | Referencias a reglamentos aún no aprobados como si fueran reglas vigentes | SRS previa e informes RF | Corregida parcialmente | Se reclasifican como decisiones pendientes | Registro de decisiones; preguntas pendientes |
-| INC-009 | Duplicidad de rutas documentales entre `Actas` y `Actas_de_Reuniones` / `Informes_Tecnicos` | Estructura actual del repositorio | Abierta con contencion documental | Se mantiene trazabilidad y se actualizan índices, advertencias frontales y guías para evitar lectura como fuente vigente | Indice; guia documental; notas historicas |
+| INC-009 | Duplicidad de rutas documentales entre `Actas` y `Actas_de_Reuniones` / `Informes_Tecnicos` | Estructura previa del repositorio | Corregida mediante historizacion | Las fuentes heredadas se movieron a `99_Historico/Documentacion_Heredada/`; el corpus activo queda concentrado en `10_Escritorio_Garita/` | Indice maestro; historico |
 | INC-010 | Ausencia local verificable de `Marca_Cato_Parking.docx` | Búsqueda en workspace | Abierta | Se documenta como insumo oficial faltante en el repositorio de trabajo | Identidad oficial; preguntas pendientes |
-| INC-011 | Referencias técnicas a Reader 1, Reader 4, E0, E20, E27, LOCK 1 y LOCK 2 tratadas como definitivas | README anterior y código fuente | Abierta con validación técnica pendiente | Se mantienen solo como hipótesis técnicas o comportamiento observado del prototipo | README; informe UX/UI; decisiones |
-| INC-012 | SQL presentado como base activa del prototipo cuando la aplicación opera con JSON | README anterior y documentos de visión | Corregida documentalmente | Se documenta SQL Server como transición planificada o visión posterior; la persistencia local JSON se reconoce como base observable del prototipo | README; MVP; SRS; auditorias |
+| INC-011 | Referencias técnicas a Reader 1, Reader 4, E0, E20, E27, LOCK 1 y LOCK 2 tratadas como definitivas | Documentación técnica histórica del prototipo | Abierta con validación técnica pendiente | Se mantienen solo como hipótesis técnicas o comportamiento observado, sin fijar la topología final | Especificación InBIO 260; preguntas pendientes; decisiones |
+| INC-012 | SQL heredado confundible con el modelo de datos objetivo | Artefacto SQL y documentación histórica | Abierta como pendiente de clasificación técnica | El SQL se conserva como artefacto no normativo; el modelo activo se gobierna desde `04_Datos/Modelo_Datos_Cato_Parking.md` | Modelo de datos; preguntas pendientes |
+| INC-013 | Fragmentación de casos, procesos, actores/permisos, datos, hardware y despliegue | Estructura previa de `10_Escritorio_Garita/` | Corregida mediante consolidación | Se crearon documentos canónicos y se preservaron las fuentes en histórico con equivalencias de identificadores | Índice maestro; documentos consolidados |
+| INC-014 | Casos `CP-*` y evidencias reservadas podían interpretarse como pruebas existentes | Matriz de trazabilidad y carpeta de pruebas | Abierta | Se explicita que los identificadores están previstos y que no hay pruebas materializadas ni ejecutadas | Matriz de trazabilidad; pruebas |
 
 ## 2. Observaciones
 

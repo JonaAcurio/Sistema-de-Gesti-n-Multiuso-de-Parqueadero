@@ -11,9 +11,9 @@
 
 1. Supervisa accesos e incidencias.
 2. Valida contingencias.
-3. Revisa evidencia para sanciones cuando aplique.
+3. Revisa evidencia de incidencias cuando corresponda.
 
-## Financiero
+## Financiero — sistema completo
 
 1. Consulta solicitudes con comprobantes.
 2. Aprueba o rechaza pagos.

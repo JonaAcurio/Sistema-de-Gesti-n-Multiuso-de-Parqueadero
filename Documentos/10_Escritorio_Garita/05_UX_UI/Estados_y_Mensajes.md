@@ -20,4 +20,4 @@
 | Acceso denegado | Mostrar motivo comprensible sin exponer detalles sensibles. |
 | Desconexion | Diferenciar fallo de controlador, red y servicio central. |
 | Lectura duplicada | Informar que la lectura fue ignorada por anti-rebote. |
-| Pago rechazado | Exigir observacion para trazabilidad. |
+| Pago rechazado — sistema completo | Exigir observacion para trazabilidad, sujeto a reglas financieras aprobadas. |

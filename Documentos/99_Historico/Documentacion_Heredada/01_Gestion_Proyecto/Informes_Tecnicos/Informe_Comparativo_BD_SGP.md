@@ -25,7 +25,7 @@ Adicionalmente, se documenta la **integración técnica entre la base de datos y
 ### 1.1 La Base de Datos Antigua — Diagnóstico
 
 > **📷 Diagrama BD Antigua**
-> ![BD Antigua](../../Imagenes/BD%20Antigua.jpeg)
+> ![BD Antigua](../../../../Imagenes/BD%20Antigua.jpeg)
 > *Descripción: Diagrama entidad-relación de la base de datos original del sistema.*
 
 #### ¿Qué era y cómo funcionaba?
@@ -57,7 +57,7 @@ A pesar de sus limitaciones, la BD Antigua demostró intención de robustez:
 ### 1.2 La Base de Datos Nueva — Diagnóstico
 
 > **📷 Diagrama BD Nueva**
-> ![BD Nueva](../../Imagenes/BD%20Nueva.jpeg)
+> ![BD Nueva](../../../../Imagenes/BD%20Nueva.jpeg)
 > *Descripción: Diagrama entidad-relación de la nueva arquitectura desarrollada para el SGP versión actual.*
 
 #### ¿Qué es y cómo funciona?

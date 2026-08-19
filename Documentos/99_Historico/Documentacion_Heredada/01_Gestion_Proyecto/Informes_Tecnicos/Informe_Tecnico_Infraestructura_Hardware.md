@@ -118,13 +118,13 @@ La siguiente documentación visual confirma la disposición física de los punto
 # Simulación Entrada Garaje
 
 ::: carousel
-![Sector Coliseo - Acceso Entrada](../../Imagenes/Coliseo%20Entrada.jpeg)
+![Sector Coliseo - Acceso Entrada](../../../../Imagenes/Coliseo%20Entrada.jpeg)
 
 # Simulación Salida Garaje
 
 <!-- slide -->
 
-![Sector Coliseo - Acceso Salida](../../Imagenes/Coliseo%20Salida.jpeg)
+![Sector Coliseo - Acceso Salida](../../../../Imagenes/Coliseo%20Salida.jpeg)
 :::
 
 *Descripción: Detalle técnico de la infraestructura en el punto de entrada y salida del Sector Coliseo. Se observa la ubicación prevista para las antenas UHF, los sensores de lazo y la integración con las plumas existentes.*

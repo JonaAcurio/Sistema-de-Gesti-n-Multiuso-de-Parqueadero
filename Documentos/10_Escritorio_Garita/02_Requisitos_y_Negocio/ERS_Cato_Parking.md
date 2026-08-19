@@ -3,11 +3,11 @@
 **Codigo documental:** CP-ERS-001  
 **Version:** 1.2  
 **Estado:** Borrador formal para validacion institucional  
-**Fecha:** 2026-08-10
+**Fecha:** 2026-08-18
 
 ## 1. Control documental
 
-- Sustituye funcionalmente a `02_Requisitos_y_Analisis/Plantillas/Plantilla_IEEE830_Parqueadero.md`.
+- Sustituye funcionalmente al documento historico `02_Requisitos_y_Analisis/Plantillas/Plantilla_IEEE830_Parqueadero.md`.
 - Usa como fuentes `README.md`, `Registro_Decisiones.md`, `Registro_Stakeholders.md`, `Preguntas_Pendientes_PUCESA.md` y evidencia observable del prototipo local.
 
 ## 2. Introduccion

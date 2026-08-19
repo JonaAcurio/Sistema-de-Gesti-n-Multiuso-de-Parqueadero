@@ -3,7 +3,9 @@
 **Codigo documental:** CP-RN-001  
 **Version:** 1.1  
 **Estado:** Borrador para validacion institucional  
-**Fecha:** 2026-07-17
+**Fecha:** 2026-08-18
+
+> “Aprobada” identifica una regla consolidada en el baseline documental. Las reglas que requieren decision de PUCESA permanecen como pendientes; ninguna entrada de este catalogo constituye por si sola aprobacion institucional.
 
 ## Convencion de estados
 

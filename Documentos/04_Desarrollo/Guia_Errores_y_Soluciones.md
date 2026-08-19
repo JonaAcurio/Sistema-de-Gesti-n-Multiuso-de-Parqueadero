@@ -1,5 +1,7 @@
 # 🛠️ Guía de Errores y Soluciones del Sistema
 
+> **Alcance documental:** referencia técnica heredada del prototipo y del soporte de desarrollo. No es fuente de verdad para requisitos, reglas de negocio, procesos, arquitectura objetivo ni alcance institucional; esos temas se gobiernan desde `Documentos/10_Escritorio_Garita/`.
+
 Esta guía documenta los errores comunes encontrados durante el desarrollo, sus causas raíz, las soluciones aplicadas y el procedimiento a seguir en caso de que vuelvan a ocurrir.
 
 ---

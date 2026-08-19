@@ -22,8 +22,8 @@ La documentacion vigente del escritorio de garita ya no se gobierna desde las ru
 
 La fuente activa debe leerse prioritariamente desde:
 
-- [Documentos/10_Escritorio_Garita/README.md](10_Escritorio_Garita/README.md)
-- [Indice_Maestro_Documentos.md](10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
+- [Documentos/10_Escritorio_Garita/README.md](../../../10_Escritorio_Garita/README.md)
+- [Indice_Maestro_Documentos.md](../../../10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
 
 ## 2. Estructura vigente de referencia
 
@@ -38,11 +38,11 @@ La fuente activa debe leerse prioritariamente desde:
 
 ## 3. Documentos vigentes de entrada
 
-- [README del escritorio de garita](10_Escritorio_Garita/README.md)
-- [Índice Maestro de Documentos](10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
-- [ERS_Cato_Parking.md](10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md)
-- [Matriz_Trazabilidad_Requisitos.md](10_Escritorio_Garita/02_Requisitos_y_Negocio/Matriz_Trazabilidad_Requisitos.md)
-- [Backlog_Proyecto.md](10_Escritorio_Garita/01_Gestion_Proyecto/Planificacion/Backlog_Proyecto.md)
+- [README del escritorio de garita](../../../10_Escritorio_Garita/README.md)
+- [Índice Maestro de Documentos](../../../10_Escritorio_Garita/00_Gobierno_Documental/Indice_Maestro_Documentos.md)
+- [ERS_Cato_Parking.md](../../../10_Escritorio_Garita/02_Requisitos_y_Negocio/ERS_Cato_Parking.md)
+- [Matriz_Trazabilidad_Requisitos.md](../../../10_Escritorio_Garita/02_Requisitos_y_Negocio/Matriz_Trazabilidad_Requisitos.md)
+- [Backlog_Proyecto.md](../../../10_Escritorio_Garita/01_Gestion_Proyecto/Planificacion/Backlog_Proyecto.md)
 
 ## 4. Documentos sustituidos de alta visibilidad
 

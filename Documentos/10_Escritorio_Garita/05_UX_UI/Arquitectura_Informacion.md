@@ -11,6 +11,8 @@ La interfaz se organiza por tareas reales y no por CRUD disperso.
 
 ## Areas de informacion
 
+Las áreas marcadas como gestión institucional, revisión financiera y autoservicio corresponden al sistema completo o a integraciones futuras; no deben leerse como funciones confirmadas del nodo local de garita.
+
 | Area | Tareas principales | Roles |
 | --- | --- | --- |
 | Operacion de garita | Monitorear acceso, apertura manual, incidentes | GARITA, SEGURIDAD |
